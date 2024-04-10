@@ -6,7 +6,7 @@ import git
 
 BUILD_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "..")
 
-PER_WORD_MODE = True
+PER_WORD_MODE = False
 
 repo = git.Repo(BUILD_PATH)
 tree = repo.head.commit.tree
