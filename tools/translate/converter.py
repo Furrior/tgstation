@@ -1,8 +1,9 @@
-import git
-import json
-import re
-import os
 import hashlib
+import os
+import json
+
+import git
+
 BUILD_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "..")
 
 repo = git.Repo(BUILD_PATH)
@@ -10,7 +11,7 @@ tree = repo.head.commit.tree
 if not tree:
     print("No changes")
     exit()
-diff = repo.git.diff(tree)
+diff = repo.git.diff(tree, '--word-diff=porcelain')
 if not diff:
     print("No changes")
     exit()
