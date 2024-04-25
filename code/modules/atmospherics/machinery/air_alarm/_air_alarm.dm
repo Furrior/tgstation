@@ -567,7 +567,7 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 	if(danger_level)
 		alarm_manager.send_alarm(ALARM_ATMOS)
 		if(pressure <= WARNING_LOW_PRESSURE && temp <= BODYTEMP_COLD_WARNING_1+10)
-			warning_message = "Danger! Low pressure and temperature detected."
+			warning_message = "УВАГА! Low pressure and temperature detected."
 			return
 		if(pressure <= WARNING_LOW_PRESSURE && temp >= BODYTEMP_HEAT_WARNING_1-27)
 			warning_message = "Danger! Low pressure and high temperature detected."
