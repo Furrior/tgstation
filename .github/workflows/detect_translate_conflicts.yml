@@ -32,6 +32,7 @@ jobs:
             const { MERGE_CONFLICTS } = process.env
 
             if(!MERGE_CONFLICTS) {
+              console.log("no conflicts")
               return
             }
 
