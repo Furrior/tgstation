@@ -2,7 +2,7 @@
 	name = "Silero"
 	is_enabled = TRUE
 
-/datum/tts_provider/silero/request(text, datum/tts_seed/silero/seed, sfx = null, datum/callback/proc_callback)
+/datum/tts_provider/silero/request(text, datum/tts_seed/silero/seed, datum/callback/proc_callback, sfx = null)
 	if(throttle_check())
 		return FALSE
 
