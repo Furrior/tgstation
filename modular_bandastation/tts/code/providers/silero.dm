@@ -2,14 +2,14 @@
 	name = "Silero"
 	is_enabled = TRUE
 
-/datum/tts_provider/silero/request(text, datum/tts_seed/silero/seed, datum/callback/proc_callback)
+/datum/tts_provider/silero/request(text, datum/tts_seed/silero/seed, sfx = null, datum/callback/proc_callback)
 	if(throttle_check())
 		return FALSE
 
 	var/ssml_text = {"<speak>[text]</speak>"}
 
 	var/list/req_body = list()
-	
+
 	req_body["api_token"] = CONFIG_GET(string/tts_token_silero)
 	req_body["text"] = ssml_text
 	req_body["sample_rate"] = 24000
@@ -22,6 +22,8 @@
 	req_body["symbol_durs"] = list()
 	req_body["format"] = "ogg"
 	req_body["word_ts"] = FALSE
+	if (sfx)
+		req_body["sfx"] = sfx
 
 	SShttp.create_async_request(RUSTG_HTTP_METHOD_POST, CONFIG_GET(string/tts_api_url_silero), json_encode(req_body), list("content-type" = "application/json"), proc_callback)
 
