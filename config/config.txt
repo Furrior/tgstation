@@ -42,7 +42,7 @@ $include splurt/plug13.txt
 # SERVERSQLNAME tgstation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME Space Station 13
+STATIONNAME Vulp Station 13
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 #HUB
@@ -155,13 +155,13 @@ NO_DEAD_VOTE
 ## 0 = Cannot respawn (default)
 ## 1 = Can respawn
 ## 2 = Can respawn if choosing a different character
-ALLOW_RESPAWN 0
+ALLOW_RESPAWN 1
 
 ## Respawn delay (deciseconds), which doesn't allow to return to lobby
 RESPAWN_DELAY 0
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Yournamehere
+HOSTEDBY furior
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting).
 ## You probably want this enabled for a production server.
@@ -247,7 +247,7 @@ IPINTEL_REJECT_BAD
 ## from https://github.com/yt-dlp/yt-dlp/releases
 ## or your package manager
 ## The default value assumes yt-dlp is in your system PATH
-# INVOKE_YOUTUBEDL yt-dlp
+INVOKE_YOUTUBEDL yt-dlp
 
 ## Comment this out to disable users ability to use the request internet sounds to be played.
 REQUEST_INTERNET_SOUND
