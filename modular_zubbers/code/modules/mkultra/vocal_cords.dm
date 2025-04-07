@@ -127,43 +127,43 @@
 		to_chat(world, "[user]'s power is [power_multiplier].")
 
 	//Mixables
-	var/static/regex/enthrall_words = regex("relax|obey|love|serve|so easy|ara ara")
-	var/static/regex/reward_words = regex("good boy|good girl|good pet|good job|good")
-	var/static/regex/punish_words = regex("bad boy|bad girl|bad pet|bad job|bad")
+	var/static/regex/enthrall_words = regex("расслабься|подчинись|люби|служи|полегче|ara ara")
+	var/static/regex/reward_words = regex("хороший мальчик|хорошая девочка|хороший питомец|хорошая работа|хорошо")
+	var/static/regex/punish_words = regex("плохой мальчик|плохая девочка|плохой питомец|плохая работа|плохо")
 	//phase 0
-	var/static/regex/saymyname_words = regex("say my name|who am i")
-	var/static/regex/wakeup_words = regex("revert|awaken|snap|attention")
+	var/static/regex/saymyname_words = regex("скажи мое имя|кто я")
+	var/static/regex/wakeup_words = regex("revert|проснись|snap|внимание")
 	//phase1
-	var/static/regex/petstatus_words = regex("how are you|what is your status|are you okay")
-	var/static/regex/silence_words = regex("shut up|silence|be silent|shh|quiet|hush")
-	var/static/regex/speak_words = regex("talk to me|speak")
-	var/static/regex/antiresist_words = regex("unable to resist|give in|stop being difficult")//useful if you think your target is resisting a lot
-	var/static/regex/resist_words = regex("resist|snap out of it|fight")//useful if two enthrallers are fighting
-	var/static/regex/forget_words = regex("forget|muddled|awake and forget")
-	var/static/regex/attract_words = regex("come here|come to me|get over here|attract")
+	var/static/regex/petstatus_words = regex("как ты|как у тебя дела|ты в порядке|как дела")
+	var/static/regex/silence_words = regex("заткнись|тишина|тише|шшш|тихо|молчи|молчать")
+	var/static/regex/speak_words = regex("поговори со мной|говори")
+	var/static/regex/antiresist_words = regex("не сопротивляйся|сдавайся|сдайся|не усложняй")//useful if you think your target is resisting a lot
+	var/static/regex/resist_words = regex("сопротивляйся|вырвись из этого|борись")//useful if two enthrallers are fighting
+	var/static/regex/forget_words = regex("забудь|проснись и забудь")
+	var/static/regex/attract_words = regex("иди сюда|иди ко мне|давай сюда|примани")
 	//phase 2
-	var/static/regex/sleep_words = regex("sleep|slumber|rest")
-	var/static/regex/strip_words = regex("strip|derobe|nude|at ease|suit off")
-	var/static/regex/walk_words = regex("slow down|walk")
-	var/static/regex/run_words = regex("run|speed up")
-	var/static/regex/liedown_words = regex("lie down")
-	var/static/regex/knockdown_words = regex("drop|fall|trip|knockdown|kneel|army crawl")
+	var/static/regex/sleep_words = regex("спи|дремай|отдохни")
+	var/static/regex/strip_words = regex("стяни|голый|разденься")
+	var/static/regex/walk_words = regex("помедленее|иди")
+	var/static/regex/run_words = regex("беги|побыстрее")
+	var/static/regex/liedown_words = regex("ложись")
+	var/static/regex/knockdown_words = regex("падай|упади|на колени|ползи")
 	//phase 3
-	var/static/regex/statecustom_words = regex("state triggers|state your triggers")
-	var/static/regex/custom_words = regex("new trigger|listen to me")
-	var/static/regex/custom_words_words = regex("speak|echo|shock|kneel|strip|trance")//What a descriptive name!
-	var/static/regex/custom_echo = regex("obsess|fills your mind|loop")
-	var/static/regex/instill_words = regex("feel|entice|overwhelm")
-	var/static/regex/recognise_words = regex("recognise me|did you miss me?")
-	var/static/regex/objective_words = regex("new objective|obey this command|unable to resist|compelled")
-	var/static/regex/heal_words = regex("live|heal|survive|mend|life")
-	var/static/regex/stun_words = regex("stop|wait|stand still|hold on|halt")
+	var/static/regex/statecustom_words = regex("скажи триггеры|скажи свои триггеры")
+	var/static/regex/custom_words = regex("новый триггер|слушай меня")
+	var/static/regex/custom_words_words = regex("говори|повторяй|шок|на колени|лента|транс")//What a descriptive name!
+	var/static/regex/custom_echo = regex("овладевает|заполняет твой разум|повторяй")
+	var/static/regex/instill_words = regex("почувствуй|увлекись")
+	var/static/regex/recognise_words = regex("узнаешь меня|скучал по мне")
+	var/static/regex/objective_words = regex("новый приказ|слушай команду|приказываю|подчинись")
+	var/static/regex/heal_words = regex("живи|лечись|выживи|чинись|жизнь")
+	var/static/regex/stun_words = regex("стой|стоять|жди|стой смирно|подожди|остановись")
 	var/static/regex/hallucinate_words = regex("get high|hallucinate|trip balls")
-	var/static/regex/hot_words = regex("heat|hot|hell")
-	var/static/regex/cold_words = regex("cold|cool down|chill|freeze")
-	var/static/regex/getup_words = regex("get up|hop to it")
-	var/static/regex/pacify_words = regex("docile|complacent|friendly|pacifist")
-	var/static/regex/charge_words = regex("charge|oorah|attack")
+	var/static/regex/hot_words = regex("горячо")
+	var/static/regex/cold_words = regex("холодно")
+	var/static/regex/getup_words = regex("встань|вставай")
+	var/static/regex/pacify_words = regex("docile|complacent|дружелюбнее|пацифист")
+	var/static/regex/charge_words = regex("фас|oorah|атакуй")
 
 	var/distance_multiplier = list(2,2,1.5,1.3,1.15,1,0.8,0.6,0.5,0.25)
 
@@ -204,7 +204,7 @@
 				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), enthrall_listener, "<span class='nicegreen'><b><i>I've been praised for doing a good job!</b></i></span>"), 5)
 			enthrall_chem.resistance_tally -= power_multiplier
 			enthrall_chem.enthrall_tally += power_multiplier
-			var/descmessage = "<span class='love'><i>[(enthrall_chem.lewd?"I feel so happy! I'm a good pet who [enthrall_chem.enthrall_gender] loves!":"I did a good job!")]</i></span>"
+			var/descmessage = "<span class='love'><i>[(enthrall_chem.lewd?"Я так счастлив! Я хороший питомец которого любит [enthrall_chem.enthrall_gender]!":"Я сделал хорошую работу!")]</i></span>"
 			enthrall_listener.add_mood_event("enthrallpraise", /datum/mood_event/enthrallpraise, descmessage)
 			enthrall_chem.cooldown += 1
 
@@ -213,7 +213,7 @@
 		for(var/enthrall_victim in listeners)
 			var/mob/living/enthrall_listener = enthrall_victim
 			var/datum/status_effect/chem/enthrall/enthrall_chem = enthrall_listener.has_status_effect(/datum/status_effect/chem/enthrall)
-			var/descmessage = "[(enthrall_chem.lewd?"I've failed [enthrall_chem.enthrall_gender]... What a bad, bad pet!":"I did a bad job...")]"
+			var/descmessage = "[(enthrall_chem.lewd?"Я подвел [enthrall_chem.enthrall_gender]... Какой плохой, плохой питомец!":"Я провалился...")]"
 			if(enthrall_listener == user)
 				continue
 			if (enthrall_chem.lewd)
@@ -221,7 +221,7 @@
 					if(ishuman(enthrall_listener))
 						var/mob/living/carbon/human/humanoid = enthrall_listener
 						humanoid.adjust_arousal(3*power_multiplier)
-					descmessage += "And yet, it feels so good..!</span>" //I don't really understand masco, is this the right sort of thing they like?
+					descmessage += "И все же, это так хорошо...!</span>" //I don't really understand masco, is this the right sort of thing they like?
 					enthrall_chem.enthrall_tally += power_multiplier
 					enthrall_chem.resistance_tally -= power_multiplier
 					addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), enthrall_listener, "<span class='love'>I've let [enthrall_chem.enthrall_gender] down...!</b></span>"), 5)
@@ -280,101 +280,101 @@
 				if(0)
 					continue
 				if(1)
-					addtimer(CALLBACK(humanoid, /atom/movable/proc/say, "I feel happy being with you."), 5)
+					addtimer(CALLBACK(humanoid, /atom/movable/proc/say, "Мне так хорошо с вами."), 5)
 					continue
 				if(2)
-					speaktrigger += "[(enthrall_chem.lewd?"I think I'm in love with you... ":"I find you really inspirational, ")]" //'
+					speaktrigger += "[(enthrall_chem.lewd?"Я думаю, я влюблен в вас... ":"Вы меня вдохновляете, ")]" //'
 				if(3)
-					speaktrigger += "[(enthrall_chem.lewd?"I'm devoted to being your pet":"I'm commited to following your cause!")]! "
+					speaktrigger += "[(enthrall_chem.lewd?"Я хочу быть вашим питомцом":"Я хочу следовать вашим приказам!")]! "
 				if(4)
-					speaktrigger += "[(enthrall_chem.lewd?"You are my whole world and all of my being belongs to you, ":"I cannot think of anything else but aiding your cause, ")] "//Redflags!!
+					speaktrigger += "[(enthrall_chem.lewd?"Вы весь мой мир и все мое существо принадлежит вам, ":"Не могу думать ни о чем другом, кроме как служить вам, ")] "//Redflags!!
 
 			//mood
 			if(humanoid.mob_mood)
 				switch(humanoid.mob_mood.sanity_level)
 					if(SANITY_GREAT to INFINITY)
-						speaktrigger += "I'm beyond elated!! " //did you mean byond elated? hohoho
+						speaktrigger += "Я вне себя от восторга!! " //did you mean byond elated? hohoho
 					if(SANITY_NEUTRAL to SANITY_GREAT)
-						speaktrigger += "I'm really happy! "
+						speaktrigger += "Я счастлив! "
 					if(SANITY_DISTURBED to SANITY_NEUTRAL)
-						speaktrigger += "I'm a little sad, "
+						speaktrigger += "Мне немного грустно, "
 					if(SANITY_UNSTABLE to SANITY_DISTURBED)
-						speaktrigger += "I'm really upset, "
+						speaktrigger += "Мне грустно, "
 					if(SANITY_CRAZY to SANITY_UNSTABLE)
-						speaktrigger += "I'm about to fall apart without you! "
+						speaktrigger += "Мне очень плохо без вас! "
 					if(SANITY_INSANE to SANITY_CRAZY)
-						speaktrigger += "Hold me, please.. "
+						speaktrigger += "Подержи меня, пожалуйста.. "
 
 			//withdrawl_active
 			switch(enthrall_chem.withdrawl_progress)
 				if(10 to 36) //denial
-					speaktrigger += "I missed you, "
+					speaktrigger += "Я скучал по вам, "
 				if(36 to 66) //barganing
-					speaktrigger += "I missed you, but I knew you'd come back for me! "
+					speaktrigger += "Я скучал по вам, но знал, что вы вернетесь! "
 				if(66 to 90) //anger
-					speaktrigger += "I couldn't take being away from you like that, "
+					speaktrigger += "Я не смог бы вынести такой разлуки с вами., "
 				if(90 to 140) //depression
-					speaktrigger += "I was so scared you'd never come back, "
+					speaktrigger += "Я так боялся, что вы не вернетесь, "
 				if(140 to INFINITY) //acceptance
-					speaktrigger += "I'm hurt that you left me like that... I felt so alone... "
+					speaktrigger += "Мне больно, что вы вот так бросили меня... Я чувствовала себя таким одиноком... "
 
 			//hunger
 			switch(humanoid.nutrition)
 				if(0 to NUTRITION_LEVEL_STARVING)
-					speaktrigger += "I'm famished, please feed me..! "
+					speaktrigger += "Я умираю с голоду, пожалуйста, накормите меня..! "
 				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					speaktrigger += "I'm so hungry... "
+					speaktrigger += "Я так голоден... "
 				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					speaktrigger += "I'm hungry, "
+					speaktrigger += "Я голоден, "
 				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					speaktrigger += "I'm sated, "
+					speaktrigger += "Я сыт, "
 				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-					speaktrigger += "I've a full belly! "
+					speaktrigger += "У меня полный животик! "
 				if(NUTRITION_LEVEL_FULL to INFINITY)
-					speaktrigger += "I'm fat... "
+					speaktrigger += "Я толстый... "
 
 			//health
 			switch(humanoid.health)
 				if(100 to INFINITY)
-					speaktrigger += "I feel fit, "
+					speaktrigger += "Я в порядке, "
 				if(80 to 99)
-					speaktrigger += "I ache a little bit, "
+					speaktrigger += "Немного побаливает, "
 				if(40 to 80)
-					speaktrigger += "I'm really hurt, "
+					speaktrigger += "У меня все болит, "
 				if(0 to 40)
-					speaktrigger += "I'm in a lot of pain, help! "
+					speaktrigger += "Мне очень плохо, помогите! "
 				if(-INFINITY to 0)
-					speaktrigger += "I'm barely concious and in so much pain, please help me! "
+					speaktrigger += "Я еле в сознании, помогите мне! "
 			//toxin
 			switch(humanoid.get_tox_loss())
 				if(10 to 30)
-					speaktrigger += "I feel a bit queasy... "
+					speaktrigger += "Меня немного подташнивает... "
 				if(30 to 60)
-					speaktrigger += "I feel nauseous... "
+					speaktrigger += "Меня тошнит... "
 				if(60 to INFINITY)
-					speaktrigger += "My head is pounding and I feel like I'm going to be sick... "
+					speaktrigger += "У меня раскалывается голова, и я чувствую, что меня сейчас стошнит... "
 			//oxygen
 			if (humanoid.get_oxy_loss() >= 25)
 				speaktrigger += "I can't breathe! "
 			//deaf..?
 			if (HAS_TRAIT(humanoid, TRAIT_DEAF))//How the heck you managed to get here I have no idea, but just in case!
-				speaktrigger += "I can barely hear you! "
+				speaktrigger += "Я еле вас слышу! "
 			//And the brain damage. And the brain damage. And the brain damage. And the brain damage. And the brain damage.
 			switch(humanoid.get_organ_loss(ORGAN_SLOT_BRAIN))
 				if(20 to 40)
-					speaktrigger += "I have a mild head ache, "
+					speaktrigger += "У меня слегка болит голова, "
 				if(40 to 80)
-					speaktrigger += "I feel disorentated and confused, "
+					speaktrigger += "Я чувствую себя дезориентированным и сбитым с толку, "
 				if(80 to 120)
-					speaktrigger += "My head feels like it's about to explode, "
+					speaktrigger += "У меня такое чувство, что моя голова вот-вот взорвется, "
 				if(120 to 160)
-					speaktrigger += "You are the only thing keeping my mind sane, "
+					speaktrigger += "Вы - единственное, что не дает мне сойти с ума., "
 				if(160 to INFINITY)
-					speaktrigger += "I feel like I'm on the brink of losing my mind, "
+					speaktrigger += "Я чувствую, что вот-вот сойду с ума., "
 
 			//collar
 			if(humanoid.wear_neck?.kink_collar == TRUE && enthrall_chem.lewd)
-				speaktrigger += "I love the collar you gave me, "
+				speaktrigger += "Мне нравится ошейник, который вы мне дали, "
 			//End
 			if(enthrall_chem.lewd)
 				speaktrigger += "[enthrall_chem.enthrall_gender]!"
@@ -404,7 +404,7 @@
 			REMOVE_TRAIT(carbon_mob, TRAIT_MUTE, "enthrall")
 			carbon_mob.set_silence(0 SECONDS)
 			enthrall_chem.cooldown += 3
-			to_chat(user, "<span class='notice'><i>You [(enthrall_chem.lewd?"allow [carbon_mob] to speak again":"encourage [carbon_mob] to speak again")].</i></span>")
+			to_chat(user, "<span class='notice'><i>Вы [(enthrall_chem.lewd?"разрешаете [carbon_mob] говорить снова":"позволяет [carbon_mob] снова говорить")].</i></span>")
 
 
 	//Antiresist
@@ -416,7 +416,7 @@
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), enthrall_listener, "<span class='big warning'>Your mind clouds over, as you find yourself unable to resist!</b></span>"), 5)
 			enthrall_chem.status_strength = (1 * power_multiplier * enthrall_chem.phase)
 			enthrall_chem.cooldown += 15//Too short? yes, made 15
-			to_chat(user, "<span class='notice'><i>You frustrate [enthrall_listener]'s attempts at resisting.</i></span>")
+			to_chat(user, "<span class='notice'><i>Вы мешаете попыткам [enthrall_listener] к сопротивлению.</i></span>")
 
 	//RESIST
 	else if((findtext(message, resist_words)))
@@ -696,7 +696,7 @@
 					enthrall_chem.cooldown += 5
 					addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), enthrall_listener, "<span class='notice'>You begin to lick your wounds.</b></span>"), 5)
 					enthrall_listener.Stun(15 * power_multiplier)
-					to_chat(user, "<span class='notice'><i>[enthrall_listener] begins to lick their wounds.</i></span>")
+					to_chat(user, "<span class='notice'><i>[enthrall_listener] начинает лизать свои раны.</i></span>")
 
 	//STUN
 	else if(findtext(message, stun_words))
