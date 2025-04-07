@@ -157,7 +157,7 @@
  * * allow_numbers - allows numbers and common special characters - used for silicon/other weird things names
  * * cap_after_symbols - words like Bob's will be capitalized to Bob'S by default. False is good for titles.
  */
-/proc/reject_bad_name(t_in, allow_numbers = TRUE, max_length = MAX_NAME_LEN, ascii_only = TRUE, strict = FALSE, cap_after_symbols = TRUE) // SKYRAT EDIT CHANGE - allow_numbers to TRUE
+/proc/reject_bad_name(t_in, allow_numbers = FALSE, max_length = MAX_NAME_LEN, ascii_only = TRUE, strict = FALSE, cap_after_symbols = TRUE)
 	if(!t_in)
 		return //Rejects the input if it is null
 
@@ -178,12 +178,12 @@
 		switch(text2ascii(char))
 
 			// A  .. Z
-			if(65 to 90) //Uppercase Letters
+			if(65 to 90, 1040 to 1071, 1025) //Uppercase Letters // BANDASTATION EDIT CHANGE - Cyrillic Fixes
 				number_of_alphanumeric++
 				last_char_group = LETTERS_DETECTED
 
 			// a  .. z
-			if(97 to 122) //Lowercase Letters
+			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters // BANDASTATION EDIT CHANGE - Cyrillic Fixes
 				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || cap_after_symbols && last_char_group == SYMBOLS_DETECTED) //start of a word
 					char = uppertext(char)
 				number_of_alphanumeric++
@@ -221,7 +221,7 @@
 					continue
 				last_char_group = SPACES_DETECTED
 
-			if(127 to INFINITY)
+			if(127 to 1024, 1026 to 1104, 1106 to INFINITY) // BANDASTATION EDIT CHANGE - Cyrillic Fixes - Ёё
 				if(ascii_only)
 					if(strict)
 						return
