@@ -54,9 +54,9 @@
 		to_chat(user, span_danger("[to_be_leashed] doesn't want you to do that."))
 		return
 	/// Actually start the leashing part here
-	to_be_leashed.visible_message(span_warning("[user] raises the [src] to [to_be_leashed]'s neck!"),\
-				span_userdanger("[user] starts to bring the [src] to your neck!"),\
-				span_hear("You hear a light click as pressure builds in the air around your neck."))
+	to_be_leashed.visible_message(span_warning("[user] подносит [src] к шее [to_be_leashed]!"),\
+				span_userdanger("[user] начинает подносить [src] к твоей шее!"),\
+				span_hear("Ты слышишь легкий щелчок, когда воздух вокруг твоей шеи сжимается."))
 	if(!do_after(user, 2 SECONDS, to_be_leashed))
 		return
 	create_leash(user, to_be_leashed)
@@ -71,7 +71,7 @@
 		ouppy.balloon_alert(user, "leashed!")
 		create_leash_line(ouppy)
 		return
-	else to_chat(user, span_danger("There's a leash attached to [ouppy] already."))
+	else to_chat(user, span_danger("К [ouppy] уже привязан поводок."))
 
 /// Leash removal
 /obj/item/clothing/erp_leash/proc/remove_leash(mob/free_bird)
@@ -125,9 +125,9 @@
 			var/mob/living/yoinked = parent
 			yoinked.Move(get_step_towards(yoinked,user))
 			yoinked.adjust_stamina_loss(10)
-			yoinked.visible_message(span_warning("[yoinked] is pulled in as [user] tugs the [source]!"),\
-					span_userdanger("[user] suddenly tugs the [source], pulling you closer!"),\
-					span_userdanger("A sudden tug against your neck pulls you ahead!"))
+			yoinked.visible_message(span_warning("[yoinked] подтягивается от того, что [user] тянет за [source]!"),\
+					span_userdanger("[user] резко тянет за [source], подтягивая тебя ближе!"),\
+					span_userdanger("Внезапный рывок за твою шею тянет тебя вперед!"))
 			COOLDOWN_START(leash_hookin, tug_cd, 1 SECONDS)
 
 /datum/component/leash/erp/proc/on_item_dropped(datum/source, mob/user)
@@ -135,7 +135,7 @@
 
 	if(istype(parent, /mob))
 		var/mob/our_parent = parent
-		our_parent.balloon_alert_to_viewers("unhooked")
+		our_parent.balloon_alert_to_viewers("отцепился")
 	qdel(src)
 
 /datum/component/leash/erp/proc/on_parent_resist(datum/source, mob/user)
@@ -146,11 +146,11 @@
 	if(istype(parent, /mob) && istype(owner,/obj/item))
 		var/mob/our_parent = parent
 		var/obj/item/our_owner = owner
-		our_parent.visible_message(span_warning("[our_parent] attempts to unhook [our_parent.p_them()]self from the leash!"), \
-			span_userdanger("You start to unhook yourself from the leash..."), \
-			span_userdanger("You fumble in the dark, looking to unhook the leash..."))
+		our_parent.visible_message(span_warning("[our_parent] пытается отцепиться [our_parent.p_them()] с поводка!"), \
+			span_userdanger("Ты начинаешь отцепльяться от поводка..."), \
+			span_userdanger("Ты возишься в темноте, пытаясь отцепить поводок ..."))
 		if(do_after(our_parent, our_owner.breakouttime, target = our_parent))
-			to_chat(our_parent, span_notice("You unhook yourself from the leash."))
+			to_chat(our_parent, span_notice("Ты отцепляешься от поводка."))
 			qdel(src)
 	else qdel(src) // If they're not an item; something is very wrong - qdel anyways without the breakout time.
 
@@ -165,7 +165,7 @@
 	var/beam_color = "purple"
 	leash_line = new(user, target, icon_state = "fishing_line", beam_color = beam_color,  emissive = FALSE, override_target_pixel_y = target_py)
 	leash_line.lefthand = user.get_held_index_of_item(src) % 2 == 1
-	RegisterSignal(leash_line, COMSIG_BEAM_BEFORE_DRAW, PROC_REF(check_los))
+	//RegisterSignal(leash_line, COMSIG_BEAM_BEFORE_DRAW, PROC_REF(check_los))
 	RegisterSignal(leash_line, COMSIG_QDELETING, PROC_REF(clear_line))
 	INVOKE_ASYNC(leash_line, TYPE_PROC_REF(/datum/beam/, Start))
 	user.update_held_items()
@@ -193,7 +193,6 @@
 /datum/beam/leash_line
 	// Is the fishing rod held in left side hand
 	var/lefthand = FALSE
-
 	// Make these inline with final sprites
 
 	var/righthand_px = 0
@@ -201,6 +200,8 @@
 
 	var/lefthand_px = 0
 	var/lefthand_py = 0
+
+	max_distance = 8
 
 /datum/beam/leash_line/Start()
 	update_offsets(origin.dir)
