@@ -48,7 +48,7 @@
 			return
 
 	to_chat(dna_holder, span_notice("You press the programming button on [src]."))
-	var/selected_title = tgui_input_text(dna_holder, "Как вас будет звать ваш питомец?", "DNA Imprint: [dna_holder.real_name]", selected_title)
+	var/selected_title = tgui_input_text(dna_holder, "Как вас будет звать ваш питомец?", "DNA Imprint: [dna_holder.real_name]", "Выбор прозвища")
 	if(!isnull(selected_title))
 		enthrall_gender = selected_title
 		enthrall_ref = WEAKREF(dna_holder)
