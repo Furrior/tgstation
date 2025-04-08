@@ -48,8 +48,8 @@
 			return
 
 	to_chat(dna_holder, span_notice("You press the programming button on [src]."))
-	var/selected_title = tgui_alert(dna_holder, "What title would you like to use with your thrall?", "DNA Imprint: [dna_holder.real_name]", list("Master", "Mistress", "Cancel Imprinting"))
-	if(selected_title == "Master" || selected_title == "Mistress")
+	var/selected_title = tgui_input_text(dna_holder, "Как вас будет звать ваш питомец?", "DNA Imprint: [dna_holder.real_name]", selected_title)
+	if(!isnull(selected_title))
 		enthrall_gender = selected_title
 		enthrall_ref = WEAKREF(dna_holder)
 		enthrall_ckey = dna_holder.ckey

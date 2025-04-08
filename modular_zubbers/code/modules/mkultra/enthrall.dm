@@ -100,9 +100,9 @@
 	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(owner_resist)) //Do resistance calc if resist is pressed#
 	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(owner_hear))
 	mental_capacity = 500 - enthrall_victim.get_organ_loss(ORGAN_SLOT_BRAIN)//It's their brain!
-	var/message = "[(lewd ? "I am a good pet for [enthrall_gender]." : "[enthrall_mob] is a really inspirational person!")]"
+	var/message = "[(lewd ? "Я хороший питомец для [enthrall_gender]." : "[enthrall_mob] is a really inspirational person!")]"
 	enthrall_victim.add_mood_event("enthrall", /datum/mood_event/enthrall, message)
-	to_chat(owner, span_userdanger("You feel inexplicably drawn towards [enthrall_mob], their words having a demonstrable effect on you. It seems the closer you are to them, the stronger the effect is. However you aren't fully swayed yet and can resist their effects by repeatedly resisting as much as you can!"))
+	to_chat(owner, span_userdanger("Вы чувствуете необычную тягу к [enthrall_mob], его слова оказывают значительный эффект на вас. Чем ближе вы к нему, тем сильнее эффект. However you aren't fully swayed yet and can resist their effects by repeatedly resisting as much as you can!"))
 	SSblackbox.record_feedback("tally", "fermi_chem", 1, "Enthrall attempts")
 	return ..()
 
@@ -151,20 +151,20 @@
 				enthrall_tally = 0
 				SSblackbox.record_feedback("tally", "fermi_chem", 1, "Enthralled to state 2")
 				if(lewd)
-					to_chat(owner, span_velvet_notice("Your conciousness slips, as you sink deeper into trance and servitude."))
+					to_chat(owner, span_velvet_notice("Твое сознание ослабевает, по мере того, как вы все глубже погружаетесь в транс и рабство."))
 				else
 					to_chat(owner, span_velvet_notice("Your conciousness slips, as you feel more drawn to following [enthrall_mob]."))
 
 			else if(resistance_tally >= 48)
 				phase = ENTHRALL_BROKEN
-				to_chat(owner, span_warning("You break free of the influence in your mind, your thoughts suddenly turning lucid!"))
+				to_chat(owner, span_warning("Вы освобождаетесь от влияния своего разума, и ваши мысли внезапно становятся ясными!"))
 				if(distance_apart < 10)
-					to_chat(enthrall_mob, span_warning("[(lewd?"Your pet":"Your thrall")] seems to have broken free of your enthrallment!"))
+					to_chat(enthrall_mob, span_warning("[(lewd?"Ваш питомец":"Your thrall")], кажется, освободился!"))
 				SSblackbox.record_feedback("tally", "fermi_chem", 1, "Thralls broken free")
 				owner.remove_status_effect(src) //If resisted in phase 1, effect is removed.
 			if(prob(10))
 				if(lewd)
-					to_chat(owner, span_velvet("[pick("It feels so good to listen to [enthrall_mob].", "You can't keep your eyes off [enthrall_mob].", "[enthrall_mob]'s voice is making you feel so sleepy.",  "You feel so comfortable with [enthrall_mob]", "[enthrall_mob] is so dominant, it feels right to obey them.")]."))
+					to_chat(owner, span_velvet("[pick("Мне так приятно слушать [enthrall_mob].", "Ты не можешь оторвать глаза от [enthrall_mob].", "Голос [enthrall_mob] делает меня очень сонным.",  "Тебе так хорошо с[enthrall_mob]", "[enthrall_mob] настолько доминантен, что кажется правильным подчиниться ему.")]."))
 		if(PARTIALLY_ENTHRALLED)
 			if(enthrall_tally >= 96)
 				phase = FULLY_ENTHRALLED
@@ -172,8 +172,8 @@
 				enthrall_tally = 0
 				resistance_tally /= 2
 				if(lewd)
-					to_chat(owner, span_userlove("Your mind gives, eagerly obeying and serving [enthrall_mob]."))
-					to_chat(owner, span_userlove("You are now fully enthralled to [enthrall_mob], and eager to follow their commands. However you find that in your intoxicated state you are unable to resort to violence. Equally you are unable to commit suicide, even if ordered to, as you cannot serve your [enthrall_gender] in death.")) //If people start using this as an excuse to be violent I'll just make them all pacifists so it's not OP.
+					to_chat(owner, span_userlove("Твой разум наполняется мыслями о подчинении и облсуживании [enthrall_mob]."))
+					to_chat(owner, span_userlove("Ты теперь полностью порабощен [enthrall_mob], и хочешь выполнять его команды. Однако в таком состоянии ты не можешь никому навредить. Так же как и убить себя, даже если приказано, так как ты не можешь служить своему [enthrall_gender], если мертв.")) //If people start using this as an excuse to be violent I'll just make them all pacifists so it's not OP.
 				else
 					to_chat(owner, span_userdanger("You are unable to put up a resistance any longer, and now are under the influence of [enthrall_mob]. However you find that in your intoxicated state you are unable to resort to violence. Equally you are unable to commit suicide, even if ordered to, as you cannot follow [enthrall_mob] in death."))
 				to_chat(enthrall_mob, span_notice("Your [(lewd?"pet":"follower")] [owner] appears to have fully fallen under your sway."))
@@ -185,7 +185,7 @@
 				resist_modifier = 0
 				to_chat(owner, span_notice("You manage to shake some of the effects from your addled mind, however you can still feel yourself drawn towards [enthrall_mob]."))
 			if(lewd && prob(10))
-				to_chat(owner, span_velvet("[pick("It feels so good to listen to [enthrall_gender].", "You can't keep your eyes off [enthrall_gender].", "[enthrall_gender]'s voice is making you feel so sleepy.",  "You feel so comfortable with [enthrall_gender]", "[enthrall_gender] is so dominant, it feels right to obey them.")]."))
+				to_chat(owner, span_velvet("[pick("Мне так приятно слушать [enthrall_mob].", "Ты не можешь оторвать глаза от [enthrall_mob].", "Голос [enthrall_mob] делает меня очень сонным.",  "Тебе так хорошо с[enthrall_mob]", "[enthrall_mob] настолько доминантен, что кажется правильным подчиниться ему.")]."))
 		if(FULLY_ENTHRALLED)
 			if((resistance_tally >= 96 && withdrawl_progress >= 72) || (HAS_TRAIT(enthrall_victim, TRAIT_MINDSHIELD) && (resistance_tally >= 48)))
 				enthrall_tally = 0
@@ -195,7 +195,7 @@
 				to_chat(owner, span_notice("The separation from [(lewd?"your [enthrall_gender]":"[enthrall_mob]")] sparks a small flame of resistance in yourself, as your mind slowly starts to return to normal."))
 				REMOVE_TRAIT(owner, TRAIT_PACIFISM, "MKUltra")
 			if(lewd && prob(1) && !custom_echo)
-				to_chat(owner, span_userlove("[pick("I belong to [enthrall_gender].", "[enthrall_gender] knows whats best for me.", "Obedence is pleasure.",  "I exist to serve [enthrall_gender].", "[enthrall_gender] is so dominant, it feels right to obey them.")]."))
+				to_chat(owner, span_userlove("[pick("Я принадлежу [enthrall_gender].", "[enthrall_gender] знает, как лучше для меня ", "Повиновение - это удовольствие.",  "Я существую для того, чтобы служить [enthrall_gender].", "[enthrall_gender] настолько доминантен, что кажется правильным подчиниться ему.")]."))
 		if(OVERDOSE_ENTHRALLED) //mindbroken
 			if(mental_capacity >= 499 && (owner.get_organ_loss(ORGAN_SLOT_BRAIN) <= 0 || HAS_TRAIT(enthrall_victim, TRAIT_MINDSHIELD)) && !owner.reagents.has_reagent(/datum/reagent/mkultra))
 				phase = PARTIALLY_ENTHRALLED
@@ -212,14 +212,14 @@
 				else if(cooldown_sent == FALSE)
 					if(distance_apart < 10)
 						if(lewd)
-							to_chat(enthrall_mob, span_notice("Your pet [owner] appears to have finished internalising your last command."))
+							to_chat(enthrall_mob, span_notice("Твой питомец [owner] готов к новой команде."))
 							cooldown_sent = TRUE
 						else
 							to_chat(enthrall_mob, span_notice("Your thrall [owner] appears to have finished internalising your last command."))
 							cooldown_sent = TRUE
 				if(get_dist(enthrall_mob, owner) > 10)
 					if(prob(10))
-						to_chat(owner, span_velvet_notice("You feel [(lewd?"a deep NEED to return to your [enthrall_gender]":"like you have to return to [enthrall_mob]")]."))
+						to_chat(owner, span_velvet_notice("Ты чувствуешь [(lewd?"сильную НУЖДУ вернуться к [enthrall_gender]":"like you have to return to [enthrall_mob]")]."))
 						enthrall_victim.throw_at(get_step_towards(enthrall_mob,owner), 5, 1)
 				return//If you break the mind of someone, you can't use status effects on them.
 
@@ -256,29 +256,29 @@
 	if(withdrawl_active == TRUE)//Your minions are really REALLY needy.
 		switch(withdrawl_progress)//denial
 			if(4) // 00:20 - To reduce spam
-				to_chat(owner, span_userdanger("You are unable to complete [(lewd?"your [enthrall_gender]":"[enthrall_mob]")]'s orders without their presence, and any commands and objectives given to you prior are not in effect until you are back with them."))
+				to_chat(owner, span_userdanger("Ты не можешь выполнять приказы [(lewd?"твоего [enthrall_gender]":"[enthrall_mob]")]в их отсутствие, и все их приказы данные ранее не так важны, пока вы не вернетесь к нему."))
 				ADD_TRAIT(owner, TRAIT_PACIFISM, "MKUltra") //IMPORTANT
 			if(16 to 47) // 01:00-3:00 - Gives wiggle room, so you're not SUPER needy
 				if(prob(5))
-					to_chat(owner, span_notice("You're starting to miss [(lewd?"your [enthrall_gender]":"[enthrall_mob]")]."))
+					to_chat(owner, span_notice("Ты начинаешь скучть по [(lewd?"твоему [enthrall_gender]":"[enthrall_mob]")]."))
 				if(prob(5))
 					owner.adjust_organ_loss(ORGAN_SLOT_BRAIN, 0.1)
-					to_chat(owner, span_userlove("[(lewd?"[enthrall_gender]":"[enthrall_mob]")] will surely be back soon!>")) //denial
+					to_chat(owner, span_userlove("[(lewd?"[enthrall_gender]":"[enthrall_mob]")] точно скоро вернется!>")) //denial
 			if(48) // 03:00 - You can now try and break away
-				var/message = "[(lewd?"I feel empty when [enthrall_gender]'s not around..":"I miss [enthrall_mob]'s presence")]"
+				var/message = "[(lewd?"Я чувствую себя пусым, когда [enthrall_gender] не рядом..":"I miss [enthrall_mob]'s presence")]"
 				enthrall_victim.add_mood_event("EnthMissing1", /datum/mood_event/enthrallmissing1, message)
 			if(49 to 71) // 03:00-05:00 - barganing
 				if(prob(10))
-					to_chat(owner, span_userlove("They are coming back, right...?"))
+					to_chat(owner, span_userlove("Ты же вернешься, правда...?"))
 					owner.adjust_organ_loss(ORGAN_SLOT_BRAIN, 0.5)
 				if(prob(10))
 					if(lewd)
-						to_chat(owner, span_userlove("I just need to be a good pet for [enthrall_gender], they'll surely return if I'm a good pet."))
+						to_chat(owner, span_userlove("Мне просто нужно быть хорошим питомцем для [enthrall_gender], он точно вернется, если я буду хорошим питомцем."))
 					owner.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1.5)
 			if(72) // 05:00
 				enthrall_victim.clear_mood_event("EnthMissing1")
-				var/message = "[(lewd?"I feel so lost in this complicated world without [enthrall_gender]..":"I have to return to [enthrall_mob]!")]"
-				to_chat(owner, span_warning("You start to feel really angry about how you're not with [(lewd?"your [enthrall_gender]":"[enthrall_mob]")]!"))
+				var/message = "[(lewd?"Я так потерян в этом сложном мире без [enthrall_gender]..":"I have to return to [enthrall_mob]!")]"
+				to_chat(owner, span_warning("Тебя сильно злит то, что ты не рядом со [(lewd?"своим [enthrall_gender]":"[enthrall_mob]")]!"))
 				enthrall_victim.add_mood_event("EnthMissing2", /datum/mood_event/enthrallmissing2, message)
 				owner.adjust_stutter(30 SECONDS)
 				owner.adjust_jitter(150 SECONDS)
@@ -287,15 +287,15 @@
 					addtimer(CALLBACK(enthrall_victim.set_combat_mode(TRUE)), 2)
 					addtimer(CALLBACK(enthrall_victim, /mob/proc/click_random_mob), 2)
 					if(lewd)
-						to_chat(owner, span_warning("You are overwhelmed with anger at the lack of [enthrall_gender]'s presence and suddenly lash out!"))
+						to_chat(owner, span_warning("Тебя обуздывает ярость от остутствия [enthrall_gender] рядом и ты срываешься!"))
 					else
 						to_chat(owner, span_warning("You are overwhelmed with anger and suddenly lash out!"))
 			if(96) // 07:00
 				enthrall_victim.clear_mood_event("EnthMissing2")
-				var/message = "[(lewd?"Where are you [enthrall_gender]??!":"I need to find [enthrall_mob]!")]"
+				var/message = "[(lewd?"Где твой [enthrall_gender]??!":"I need to find [enthrall_mob]!")]"
 				enthrall_victim.add_mood_event("EnthMissing3", /datum/mood_event/enthrallmissing3, message)
 				if(lewd)
-					to_chat(owner, span_warning("You need to find your [enthrall_gender] at all costs, you can't hold yourself back anymore!"))
+					to_chat(owner, span_warning("Ты должен найти своего [enthrall_gender] любой цеой, ты больше не можешь сдерживаться!"))
 				else
 					to_chat(owner, span_warning("You need to find [enthrall_mob] at all costs, you can't hold yourself back anymore!"))
 			if(97 to 119) // 07:00-09:00 - depression
@@ -307,16 +307,16 @@
 					enthrall_victim.adjust_hallucinations(10 SECONDS)
 			if(120)
 				enthrall_victim.clear_mood_event("EnthMissing3")
-				var/message = "[(lewd?"I'm all alone, It's so hard to continute without [enthrall_gender]...":"I really need to find [enthrall_mob]!!!")]"
+				var/message = "[(lewd?"Я так одинок, Так сложно без [enthrall_gender]...":"Мне очень нужно найти [enthrall_mob]!!!")]"
 				enthrall_victim.add_mood_event("EnthMissing4", /datum/mood_event/enthrallmissing4, message)
-				to_chat(owner, span_warning("You can hardly find the strength to continue without [(lewd?"your [enthrall_gender]":"[enthrall_mob]")]."))
+				to_chat(owner, span_warning("Ты еле можешь найти силы жить без [(lewd?"твоего [enthrall_gender]":"[enthrall_mob]")]."))
 				enthrall_victim.gain_trauma_type(BRAIN_TRAUMA_SEVERE)
-			if(121 to 143) // 09:00-11:00 - depression 2, revengeance
+			if(121 to 143) // 09:00-11:00 - depression 2, revengeance11
 				if(prob(20))
 					owner.Stun(50)
 					owner.emote("cry")//does this exist?
 					if(lewd)
-						to_chat(owner, span_warning("You're unable to hold back your tears, suddenly sobbing as the desire to see your [enthrall_gender] oncemore overwhelms you."))
+						to_chat(owner, span_warning("Ты больше не можешь сдерживать слезы, всхлипывая, желание увидеть своего [enthrall_gender] еще раз переполняет тебя."))
 					else
 						to_chat(owner, span_warning("You are overwheled with withdrawl from [enthrall_mob]."))
 					owner.adjust_organ_loss(ORGAN_SLOT_BRAIN, 1)
@@ -338,7 +338,7 @@
 					owner.adjust_organ_loss(ORGAN_SLOT_BRAIN, -1)
 					if(prob(20))
 						if(lewd)
-							to_chat(owner, span_boldnicegreen("Maybe you'll be okay without your [enthrall_gender]."))
+							to_chat(owner, span_boldnicegreen("Может быть, с тобой всё будет в порядке без твоего [enthrall_gender]."))
 						else
 							to_chat(owner, span_boldnicegreen("You feel your mental functions slowly begin to return."))
 				if(prob(5))
@@ -353,14 +353,14 @@
 		if(status == "Antiresist")
 			if(status_strength < 0)
 				status = null
-				to_chat(owner, span_notice("Your mind feels able to resist oncemore."))
+				to_chat(owner, span_notice("Твой разум понимает, что способен сопротивляться ещё раз."))
 			else
 				status_strength -= 1
 
 		else if(status == "heal")
 			if(status_strength < 0)
 				status = null
-				to_chat(owner, span_notice("You finish licking your wounds."))
+				to_chat(owner, span_notice("Ты заканчиваешь зализывать свои раны."))
 			else
 				status_strength -= 1
 				owner.heal_overall_damage(4, 4, 0, FALSE, FALSE)
@@ -370,7 +370,7 @@
 			owner.add_movespeed_modifier(/datum/movespeed_modifier/status_effect/mkultra)
 			status = "charged"
 			if(lewd)
-				to_chat(owner, span_hear("Your [enthrall_gender]'s order fills you with a burst of speed!"))
+				to_chat(owner, span_hear("Твой [enthrall_gender] приказывает тебе ускориться!"))
 			else
 				to_chat(owner, span_hear("[enthrall_mob]'s command fills you with a burst of speed!"))
 
@@ -379,7 +379,7 @@
 				status = null
 				owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/mkultra)
 				owner.StaminaKnockdown(50)
-				to_chat(owner, span_warning("Your body gives out as the adrenaline in your system runs out."))
+				to_chat(owner, span_warning("Твое тело устает, после того как адреналин в крови иссяякает."))
 			else
 				status_strength -= 1
 				cooldown += 1 //Cooldown doesn't process till status is done
@@ -410,7 +410,7 @@
 	else if(cooldown_sent == FALSE)
 		if(distance_apart < 10)
 			if(lewd)
-				to_chat(enthrall_mob, span_hear("Your pet [owner] appears to have finished internalising your last command."))
+				to_chat(enthrall_mob, span_hear("Твой питомец [owner] готов к новой команде."))
 			else
 				to_chat(enthrall_mob, span_hear("Your thrall [owner] appears to have finished internalising your last command."))
 		cooldown_sent = TRUE
@@ -455,7 +455,7 @@
 
 			//Speak (Forces player to talk)
 			if(LOWER_TEXT(custom_triggers[trigger][1]) == "speak")//trigger2
-				var/saytext = "Your mouth moves on it's own before you can even catch it."
+				var/saytext = "Твой рот двигается сам до того, как ты успеваешь что то сделать."
 				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), enthralled_mob, span_hear(saytext)), 5)
 				addtimer(CALLBACK(enthralled_mob, TYPE_PROC_REF(/atom/movable, say), "[custom_triggers[trigger][2]]"), 5)
 
@@ -474,11 +474,11 @@
 				enthralled_mob.adjust_stutter(5 SECONDS)
 				enthralled_mob.StaminaKnockdown(60)
 				enthralled_mob.Stun(60)
-				to_chat(owner, span_warning("Your muscles seize up, then start spasming wildy!"))
+				to_chat(owner, span_warning("Твое тело не слушается и застывает на месте!"))
 
 			//kneel (knockdown)
 			else if(LOWER_TEXT(custom_triggers[trigger]) == "kneel")//as close to kneeling as you can get, I suppose.
-				to_chat(owner, span_hear("You drop to the ground unsurreptitiously."))
+				to_chat(owner, span_hear("Ты непроизвольно падаешь на колени."))
 				enthralled_mob.toggle_resting()
 
 			//strip (some) clothes
@@ -488,13 +488,14 @@
 				for(var/obj/item/storage_item in items)
 					if(storage_item == human_mob.w_uniform || storage_item == human_mob.wear_suit)
 						human_mob.dropItemToGround(storage_item, TRUE)
-				to_chat(owner, span_hear("You feel compelled to strip your clothes."))
+				to_chat(owner, span_hear("Ты резко раздеваешься."))
 
 			//trance
 			else if(LOWER_TEXT(custom_triggers[trigger]) == "trance")//Maaaybe too strong. Weakened it, only lasts 50 ticks.
 				var/mob/living/carbon/human/human_mob = owner
 				human_mob.apply_status_effect(/datum/status_effect/trance, 200, TRUE)
 				trance_time = 50
+				to_chat(owner, span_hear("Ты впадаешь в состояние транса."))
 
 	return
 
@@ -507,20 +508,20 @@
 		return
 	else if(phase == OVERDOSE_ENTHRALLED)
 		if(lewd)
-			to_chat(owner, span_warning("Your mind is too far gone to even entertain the thought of resisting. Unless you can fix the brain damage, you won't be able to break free of your [enthrall_gender]'s control."))
+			to_chat(owner, span_warning("Твой разум зашел слишком далеко, чтобы даже допустить мысль о сопротивлении. Если ты не сможешь устранить повреждение мозга, ты не сможешь освободиться от контроля своего [enthrall_gender]."))
 		else
 			to_chat(owner, span_warning("Your brain is too overwhelmed with from the high volume of chemicals in your system, rendering you unable to resist, unless you can fix the brain damage."))
 		return
 	else if(phase == FULLY_ENTHRALLED && withdrawl_active == FALSE)
 		if(lewd)
-			to_chat(owner, span_hypnophrase("The presence of your [enthrall_gender] fully captures the horizon of your mind, removing any thoughts of resistance. If you get split up from them, then you might be able to entertain the idea of resisting."))
+			to_chat(owner, span_hypnophrase("Присутствие твоего [enthrall_gender] полностью захватывает горизонт твоего сознания, устраняя любые мысли о сопротивлении. Если вы отстранитесь от него, то, возможно, сможете воспротивиться идее сопротивления."))
 		else
 			to_chat(owner, span_hypnophrase("You are unable to resist [enthrall_mob] in your current state. If you get split up from them, then you might be able to resist."))
 		return
 	else if(status == "Antiresist")//If ordered to not resist; resisting while ordered to not makes it last longer, and increases the rate in which you are enthralled.
 		if(status_strength > 0)
 			if(lewd)
-				to_chat(owner, span_warning("The order from your [enthrall_gender] to give in is conflicting with your attempt to resist, drawing you deeper into trance! You'll have to wait a bit before attemping again, lest your attempts become frustrated again."))
+				to_chat(owner, span_warning("Приказы твоего [enthrall_gender] уступить вступает в противоречие с твоей попыткой сопротивляться, погружая тебя еще глубже в транс! Тебе придется немного подождать, прежде чем пытаться снова, чтобы твои попытки снова не оказались безуспешными."))
 			else
 				to_chat(owner, span_warning("The order from your [enthrall_mob] to give in is conflicting with your attempt to resist. You'll have to wait a bit before attemping again, lest your attempts become frustrated again."))
 			status_strength += 1
@@ -548,7 +549,7 @@
 
 
 	if(prob(5))
-		enthrall_victim.emote("me", 1, "squints, shaking their head for a moment.")//shows that you're trying to resist sometimes
+		enthrall_victim.emote("me", 1, "щурится, немного качая головой.")//shows that you're trying to resist sometimes
 		delta_resist *= 1.5
 
 	//chemical resistance, brain and annaphros are the key to undoing, but the subject has to to be willing to resist.
