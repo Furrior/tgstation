@@ -140,13 +140,13 @@
 	var/static/regex/antiresist_words = regex("не сопротивляйся|сдавайся|сдайся|не усложняй")//useful if you think your target is resisting a lot
 	var/static/regex/resist_words = regex("сопротивляйся|вырвись из этого|борись")//useful if two enthrallers are fighting
 	var/static/regex/forget_words = regex("забудь|проснись и забудь")
-	var/static/regex/attract_words = regex("иди сюда|иди ко мне|давай сюда|примани")
+	var/static/regex/attract_words = regex("иди сюда|иди ко мне|давай сюда|примани|ко мне")
 	//phase 2
 	var/static/regex/sleep_words = regex("спи|дремай|отдохни")
 	var/static/regex/strip_words = regex("стяни|голый|разденься")
 	var/static/regex/walk_words = regex("помедленее|иди")
 	var/static/regex/run_words = regex("беги|побыстрее")
-	var/static/regex/liedown_words = regex("ложись")
+	var/static/regex/liedown_words = regex("ложись|лежать")
 	var/static/regex/knockdown_words = regex("падай|упади|на колени|ползи")
 	//phase 3
 	var/static/regex/statecustom_words = regex("скажи триггеры|скажи свои триггеры")
@@ -580,8 +580,8 @@
 						var/trigger = html_decode(stripped_input(user, "Enter the trigger phrase", MAX_MESSAGE_LEN))
 						var/custom_words_words_list = list("Speak", "Echo", "Shock", "Kneel", "Strip", "Trance", "Cancel")
 						var/trigger2 = input(user, "Pick an effect", "Effects") in custom_words_words_list
-						trigger2 = LOWER_TEXT(trigger2)
 						if ((findtext(trigger2, custom_words_words)))
+							trigger2 = LOWER_TEXT(trigger2)
 							if (trigger2 == "speak" || trigger2 == "echo")
 								var/trigger3 = html_decode(stripped_input(user, "Enter the phrase spoken. Abusing this to self antag is bannable.", MAX_MESSAGE_LEN))
 								enthrall_chem.custom_triggers[trigger] = list(trigger2, trigger3)
