@@ -126,15 +126,15 @@
 
 	//Mixables
 	var/static/regex/enthrall_words = regex("расслабься|подчинись|люби|служи|полегче|ara ara")
-	var/static/regex/reward_words = regex("хороший мальчик|хорошая девочка|хороший питомец|хорошая работа|хорошо")
+	var/static/regex/reward_words = regex("хороший мальчик|хорошая девочка|хороший питомец|хорошая работа|хорошо|молодец")
 	var/static/regex/punish_words = regex("плохой мальчик|плохая девочка|плохой питомец|плохая работа|плохо")
 	//phase 0
 	var/static/regex/saymyname_words = regex("скажи мое имя|кто я")
 	var/static/regex/wakeup_words = regex("revert|проснись|snap|внимание")
 	//phase1
 	var/static/regex/petstatus_words = regex("как ты|как у тебя дела|ты в порядке|как дела")
-	var/static/regex/silence_words = regex("заткнись|тишина|тише|шшш|тихо|молчи|молчать")
-	var/static/regex/speak_words = regex("поговори со мной|говори")
+	var/static/regex/silence_words = regex("заткнись|тишина|тише|шшш|тихо|молчи|молчать|тсс")
+	var/static/regex/speak_words = regex("поговори со мной|говори|голос")
 	var/static/regex/antiresist_words = regex("не сопротивляйся|сдавайся|сдайся|не усложняй")//useful if you think your target is resisting a lot
 	var/static/regex/resist_words = regex("сопротивляйся|вырвись из этого|борись")//useful if two enthrallers are fighting
 	var/static/regex/forget_words = regex("забудь|проснись и забудь")
@@ -144,24 +144,23 @@
 	var/static/regex/strip_words = regex("стяни|голый|разденься")
 	var/static/regex/walk_words = regex("помедленее|иди")
 	var/static/regex/run_words = regex("беги|побыстрее")
-	var/static/regex/liedown_words = regex("ложись|лежать")
+	var/static/regex/liedown_words = regex("ложись|лежать|лежи")
 	var/static/regex/knockdown_words = regex("падай|упади|на колени|ползи")
 	//phase 3
 	var/static/regex/statecustom_words = regex("скажи триггеры|скажи свои триггеры")
 	var/static/regex/custom_words = regex("новый триггер|слушай меня")
-	var/static/regex/custom_words_words = regex("говори|повторяй|шок|на колени|лента|транс")//What a descriptive name!
-	var/static/regex/custom_echo = regex("овладевает|заполняет твой разум|повторяй")
+	var/static/regex/custom_echo = regex("овладевает|заполняет твой разум|повторяй|запомни")
 	var/static/regex/instill_words = regex("почувствуй|увлекись")
 	var/static/regex/recognise_words = regex("узнаешь меня|скучал по мне")
 	var/static/regex/objective_words = regex("новый приказ|слушай команду|приказываю|подчинись")
 	var/static/regex/heal_words = regex("живи|лечись|выживи|чинись|жизнь")
 	var/static/regex/stun_words = regex("стой|стоять|жди|стой смирно|подожди|остановись")
-	var/static/regex/hallucinate_words = regex("get high|hallucinate|trip balls")
+	var/static/regex/hallucinate_words = regex("повеселее|веселись|порадостнее|радуйся")
 	var/static/regex/hot_words = regex("горячо")
 	var/static/regex/cold_words = regex("холодно")
 	var/static/regex/getup_words = regex("встань|вставай")
 	var/static/regex/pacify_words = regex("docile|complacent|дружелюбнее|пацифист")
-	var/static/regex/charge_words = regex("фас|oorah|атакуй")
+	var/static/regex/charge_words = regex("фас|oorah|атакуй|в атаку|рывок")
 
 	var/distance_multiplier = list(2,2,1.5,1.3,1.15,1,0.8,0.6,0.5,0.25)
 
@@ -578,7 +577,7 @@
 						var/trigger = html_decode(stripped_input(user, "Enter the trigger phrase", MAX_MESSAGE_LEN))
 						var/custom_words_words_list = list("Speak", "Echo", "Shock", "Kneel", "Strip", "Trance", "Cancel")
 						var/trigger2 = input(user, "Pick an effect", "Effects") in custom_words_words_list
-						if ((findtext(trigger2, custom_words_words)))
+						if (!isnull(trigger2))
 							trigger2 = LOWER_TEXT(trigger2)
 							if (trigger2 == "speak" || trigger2 == "echo")
 								var/trigger3 = html_decode(stripped_input(user, "Enter the phrase spoken. Abusing this to self antag is bannable.", MAX_MESSAGE_LEN))
@@ -726,7 +725,7 @@
 			switch(enthrall_chem.phase)
 				if(3 to INFINITY)
 					enthrall_listener.adjust_bodytemperature(50 * power_multiplier)//This seems nuts, reduced it, but then it didn't do anything, so I reverted it.
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>You feel your metabolism speed up!</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>Ты чувствуешь, что твой метаболизм ускоряется!</b></span>"), 5)
 					to_chat(user, "<span class='notice'><i>You speed [enthrall_listener]'s metabolism up!</i></span>")
 
 	//COLD
@@ -737,7 +736,7 @@
 			switch(enthrall_chem.phase)
 				if(3 to INFINITY)
 					enthrall_listener.adjust_bodytemperature(-50 * power_multiplier)
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>You feel your metabolism slow down!</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>Ты чувствуешь, что твой метаболизм замедляется!</b></span>"), 5)
 					to_chat(user, "<span class='notice'><i>You slow [enthrall_listener]'s metabolism down!</i></span>")
 
 	//GET UP
@@ -763,7 +762,7 @@
 				if(3)//Tier 3 only
 					enthrall_chem.status = "pacify"
 					enthrall_chem.cooldown += 10
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>You feel like never hurting anyone ever again.</b></span>"), 5)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, enthrall_listener, "<span class='notice'>Ты чувствуешь, что больше не можешь никому навредить.</b></span>"), 5)
 					to_chat(user, "<span class='notice'><i>You remove any intent to harm from [enthrall_listener]'s mind.</i></span>")
 
 	//CHARGE
