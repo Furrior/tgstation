@@ -96,3 +96,6 @@
       for digitigrade variants instead of separate DMI files
   - image: Replaced underwear sprites with more detailed versions from NovaSector,
       keeping S.P.L.U.R.T. originals as modular additions
+2025-04-08:
+  DumbBurrico:
+  - refactor: refactored the Concubus quirk code
