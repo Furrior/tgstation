@@ -1,5 +1,0 @@
-author: "Zattarra-Red"
-delete-after: True
-changes:
-  - rscadd: "Brings the aegis and rampart style armoring kits to the rebase."
-  - code_imp: "All armor kits now have been refactored, making it easier to understand and create subtypes in the future."

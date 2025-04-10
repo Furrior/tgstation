@@ -99,3 +99,13 @@
 2025-04-08:
   DumbBurrico:
   - refactor: refactored the Concubus quirk code
+2025-04-09:
+  Zattarra-Red:
+  - rscadd: Brings the aegis and rampart style armoring kits to the rebase.
+  - code_imp: All armor kits now have been refactored, making it easier to understand
+      and create subtypes in the future.
+  mcbalaam:
+  - rscadd: Added the Room Controller to adjust Infinity Hotel rooms
+  - rscadd: New UI for the Infinity Hotel sphere
+  - refactor: Minor hotel template loading refactor - new rooms can be fully modular
+      now
