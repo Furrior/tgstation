@@ -183,6 +183,7 @@
 	suffix = "spacehotel_skyrat.dmm"	// SKYRAT EDIT CHANGE - ORIGINAL: suffix = "spacehotel.dmm"
 	name = "Space-Ruin The Twin-Nexus Hotel"
 	description = "An interstellar hotel, where the weary spaceman can rest their head and relax, assured that the residential staff will not murder them in their sleep. Probably."
+	always_place = TRUE
 
 /datum/map_template/ruin/space/turreted_outpost
 	id = "turreted-outpost"
