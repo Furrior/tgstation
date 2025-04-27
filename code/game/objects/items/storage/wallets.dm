@@ -23,6 +23,7 @@
 		// SKYRAT EDIT BEGIN
 		/obj/item/condom_pack,
 		/obj/item/gbp_punchcard,
+		/obj/item/key_card,
 		// SKYRAT EDIT END
 		/obj/item/clothing/accessory/dogtag,
 		/obj/item/coin,
