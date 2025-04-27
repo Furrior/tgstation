@@ -98,3 +98,6 @@
   - bugfix: 306 issue fixed
   - rscadd: Added more alter job-titles
   - bugfix: 308 issue fixed
+2025-04-25:
+  MosleyTheMalO:
+  - admin: adds discord logging for admin actions
