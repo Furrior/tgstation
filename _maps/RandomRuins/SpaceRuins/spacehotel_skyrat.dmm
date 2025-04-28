@@ -690,6 +690,21 @@
 /obj/structure/closet/secure_closet/freezer/meat{
 	req_access = list("twin_nexus_staff")
 	},
+/obj/item/food/meat/slab/xeno,
+/obj/item/food/meat/slab/xeno,
+/obj/item/food/meat/slab/xeno,
+/obj/item/food/meat/slab/pig,
+/obj/item/food/meat/slab/pig,
+/obj/item/food/meat/slab/pig,
+/obj/item/food/meat/slab/mothroach,
+/obj/item/food/meat/slab/mothroach,
+/obj/item/food/meat/slab/mothroach,
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/killertomato,
+/obj/item/food/meat/slab/pug,
+/obj/item/food/meat/slab/meatproduct,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/hotel/bar)
 "em" = (
@@ -1232,6 +1247,23 @@
 /obj/item/food/meat/slab/bear,
 /obj/item/food/meat/slab/bear,
 /obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/chicken,
+/obj/item/food/meat/slab/gondola,
+/obj/item/food/meat/slab/gondola,
+/obj/item/food/meat/slab/gondola,
+/obj/item/food/meat/slab/human/mutant/fly,
+/obj/item/food/meat/slab/human/mutant/fly,
+/obj/item/food/meat/slab/human/mutant/fly,
+/obj/item/food/meat/slab/human/mutant/slime,
+/obj/item/food/meat/slab/human/mutant/slime,
+/obj/item/food/meat/slab/human/mutant/slime,
+/obj/item/food/meat/slab/meatwheat,
+/obj/item/food/meat/slab/meatwheat,
+/obj/item/food/meat/slab/meatwheat,
+/obj/item/food/meat/slab/pug,
+/obj/item/food/meat/slab/pug,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/hotel/bar)
 "gE" = (
@@ -3127,6 +3159,27 @@
 "oF" = (
 /turf/open/indestructible/hoteltile,
 /area/ruin/space/has_grav/hotel/guestroom/room_5)
+"oG" = (
+/obj/structure/closet/secure_closet/freezer/meat{
+	req_access = list("twin_nexus_staff")
+	},
+/obj/item/food/meat/slab/rawcrab,
+/obj/item/food/meat/slab/rawcrab,
+/obj/item/food/meat/slab/rawcrab,
+/obj/item/food/meat/slab/mouse,
+/obj/item/food/meat/slab/mouse,
+/obj/item/food/meat/slab/mouse,
+/obj/item/food/meat/slab/monkey,
+/obj/item/food/meat/slab/monkey,
+/obj/item/food/meat/slab/monkey,
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/synthmeat,
+/obj/item/food/meat/slab/pug,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/obj/item/food/meat/slab/meatproduct,
+/turf/open/floor/iron/kitchen_coldroom/freezerfloor,
+/area/ruin/space/has_grav/hotel/bar)
 "oH" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 4
@@ -5642,12 +5695,29 @@
 /obj/item/food/meat/slab/pug,
 /obj/item/food/meat/slab/pug,
 /obj/item/food/meat/slab/pug,
-/obj/item/food/meat/slab/pug,
 /obj/item/food/meat/slab/bear,
 /obj/item/food/meat/slab/bear,
 /obj/item/food/meat/slab/bear,
 /obj/item/food/meat/slab/bear,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bear,
+/obj/item/food/meat/slab/bugmeat,
+/obj/item/food/meat/slab/bugmeat,
+/obj/item/food/meat/slab/bugmeat,
+/obj/item/food/meat/slab/drakebait,
+/obj/item/food/meat/slab/drakebait,
+/obj/item/food/meat/slab/drakebait,
+/obj/item/food/meat/slab/grassfed,
+/obj/item/food/meat/slab/grassfed,
+/obj/item/food/meat/slab/grassfed,
+/obj/item/food/meat/slab/human/mutant/feline,
+/obj/item/food/meat/slab/human/mutant/feline,
+/obj/item/food/meat/slab/human/mutant/feline,
+/obj/item/food/meat/slab/human/mutant/zombie,
+/obj/item/food/meat/slab/human/mutant/zombie,
+/obj/item/food/meat/slab/human/mutant/zombie,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/hotel/bar)
 "EW" = (
@@ -5816,6 +5886,30 @@
 /obj/structure/closet/secure_closet/freezer/meat{
 	req_access = list("twin_nexus_staff")
 	},
+/obj/item/food/meat/slab/human/mutant/golem,
+/obj/item/food/meat/slab/human/mutant/golem,
+/obj/item/food/meat/slab/human/mutant/golem,
+/obj/item/food/meat/slab/human/mutant/lizard,
+/obj/item/food/meat/slab/human/mutant/lizard,
+/obj/item/food/meat/slab/human/mutant/lizard,
+/obj/item/food/meat/slab/human/mutant/moth,
+/obj/item/food/meat/slab/human/mutant/moth,
+/obj/item/food/meat/slab/human/mutant/moth,
+/obj/item/food/meat/slab/human/mutant/plant,
+/obj/item/food/meat/slab/human/mutant/plant,
+/obj/item/food/meat/slab/human/mutant/plant,
+/obj/item/food/meat/slab/human/mutant/shadow,
+/obj/item/food/meat/slab/human/mutant/shadow,
+/obj/item/food/meat/slab/human/mutant/shadow,
+/obj/item/food/meat/slab/human/mutant/skeleton,
+/obj/item/food/meat/slab/human/mutant/skeleton,
+/obj/item/food/meat/slab/human/mutant/skeleton,
+/obj/item/food/meat/slab/penguin,
+/obj/item/food/meat/slab/penguin,
+/obj/item/food/meat/slab/penguin,
+/obj/item/food/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
+/obj/item/food/meat/slab/spider,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/hotel/bar)
 "Gx" = (
@@ -7186,6 +7280,18 @@
 /obj/machinery/light_switch{
 	pixel_y = -24
 	},
+/obj/item/food/meat/slab/corgi,
+/obj/item/food/meat/slab/corgi,
+/obj/item/food/meat/slab/corgi,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/gorilla,
+/obj/item/food/meat/slab/gorilla,
+/obj/item/food/meat/slab/gorilla,
+/obj/item/food/meat/slab/human/mutant/ethereal,
+/obj/item/food/meat/slab/human/mutant/ethereal,
+/obj/item/food/meat/slab/human/mutant/ethereal,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/ruin/space/has_grav/hotel/bar)
 "Pq" = (
@@ -9262,7 +9368,7 @@ DA
 cl
 SQ
 fi
-Gw
+oG
 el
 BG
 fi

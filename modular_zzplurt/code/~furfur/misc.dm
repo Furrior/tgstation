@@ -13,4 +13,4 @@
 /obj/machinery/smartfridge/full_food/New()
 	. = ..()
 	for(var/food_path in subtypesof(/obj/item/food/grown))
-		initial_contents += list("[food_path]" = 15)
+		initial_contents += list("[food_path]" = 100)
