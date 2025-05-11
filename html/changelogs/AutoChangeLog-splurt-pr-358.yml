@@ -1,0 +1,7 @@
+author: "MosleyTheMalO"
+delete-after: True
+changes:
+  - rscadd: "adds automatic interactions"
+  - rscadd: "adds more additional details for interactions"
+  - bugfix: "fixes the details buttons on interactions"
+  - code_imp: "modularizes a bunch of nonmodularized code from interactions"

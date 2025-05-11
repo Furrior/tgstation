@@ -1,0 +1,5 @@
+author: "MosleyTheMalO"
+delete-after: True
+changes:
+  - rscadd: "Enabled the donator system for all of our donators"
+  - rscadd: "adds donator items for two of our donators."
