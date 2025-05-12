@@ -9,6 +9,8 @@
 
 /obj/machinery/smartfridge/full_food
 	name = "Всячина"
+	max_n_of_items = SHORT_REAL_LIMIT
+	light_flags = LIGHT_FROZEN
 
 /obj/machinery/smartfridge/full_food/New()
 	. = ..()
