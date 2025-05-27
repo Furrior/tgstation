@@ -113,9 +113,24 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/hotel/guestroom/room_5)
 "aD" = (
+<<<<<<< HEAD
 /obj/structure/bed/maint,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/hotel/guestroom/room_3)
+||||||| d10d38fac4a
+/obj/structure/table/wood,
+/obj/item/storage/fancy/candle_box/amber,
+/obj/effect/spawner/random/entertainment/lighter,
+/obj/item/wrench,
+/turf/open/floor/carpet/neon/simple/pink/nodots,
+/area/ruin/space/has_grav/hotel/guestroom/room_2)
+=======
+/obj/structure/table/wood,
+/obj/effect/spawner/random/entertainment/lighter,
+/obj/item/wrench,
+/turf/open/floor/carpet/neon/simple/pink/nodots,
+/area/ruin/space/has_grav/hotel/guestroom/room_2)
+>>>>>>> origin/master
 "aF" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/cup/glass/bottle/champagne,
@@ -241,7 +256,6 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/random/entertainment/lighter,
 /obj/item/wrench,
-/obj/item/storage/fancy/candle_box/amber,
 /turf/open/floor/carpet/neon/simple/black/nodots,
 /area/ruin/space/has_grav/hotel/guestroom/room_1)
 "by" = (
@@ -524,7 +538,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/hotel/workroom/quarters)
 "dv" = (
-/obj/item/reagent_containers/cup/rag,
+/obj/item/rag,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
@@ -1915,7 +1929,7 @@
 /area/ruin/space/has_grav/hotel/pool)
 "ji" = (
 /obj/item/reagent_containers/cup/glass/shaker,
-/obj/item/reagent_containers/cup/rag,
+/obj/item/rag,
 /obj/structure/table/reinforced/plastitaniumglass,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/bar)
@@ -3864,8 +3878,6 @@
 /area/ruin/space/has_grav/hotel)
 "tP" = (
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/item/storage/fancy/candle_box/pear,
-/obj/item/storage/fancy/candle_box/vanilla,
 /obj/effect/spawner/random/entertainment/lighter,
 /obj/item/wrench,
 /turf/open/floor/carpet/neon/simple/white/nodots,
@@ -4894,7 +4906,7 @@
 /turf/open/floor/carpet/orange,
 /area/ruin/space/has_grav/hotel)
 "Bu" = (
-/obj/machinery/photocopier,
+/obj/machinery/photocopier/prebuilt,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/workroom)
 "Bx" = (
@@ -5617,7 +5629,6 @@
 "Ga" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
-/obj/item/storage/fancy/candle_box/mint,
 /obj/effect/spawner/random/entertainment/lighter,
 /obj/item/wrench,
 /turf/open/floor/carpet/royalblack,
@@ -6933,7 +6944,6 @@
 /obj/structure/table/wood/fancy/green,
 /obj/item/wrench,
 /obj/effect/spawner/random/entertainment/lighter,
-/obj/item/storage/fancy/candle_box/jasmine,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -7178,7 +7188,6 @@
 "QM" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
-/obj/item/storage/fancy/candle_box/jasmine,
 /obj/effect/spawner/random/entertainment/lighter,
 /obj/item/wrench,
 /turf/open/floor/wood,
@@ -8076,10 +8085,6 @@
 	},
 /obj/item/cigarette/pipe{
 	pixel_x = -5
-	},
-/obj/machinery/pollution_scrubber{
-	pixel_x = 7;
-	pixel_y = -5
 	},
 /turf/open/floor/wood/large,
 /area/ruin/space/has_grav/hotel/guestroom/room_4)
