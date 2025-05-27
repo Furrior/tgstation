@@ -113,24 +113,9 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/hotel/guestroom/room_5)
 "aD" = (
-<<<<<<< HEAD
 /obj/structure/bed/maint,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/hotel/guestroom/room_3)
-||||||| d10d38fac4a
-/obj/structure/table/wood,
-/obj/item/storage/fancy/candle_box/amber,
-/obj/effect/spawner/random/entertainment/lighter,
-/obj/item/wrench,
-/turf/open/floor/carpet/neon/simple/pink/nodots,
-/area/ruin/space/has_grav/hotel/guestroom/room_2)
-=======
-/obj/structure/table/wood,
-/obj/effect/spawner/random/entertainment/lighter,
-/obj/item/wrench,
-/turf/open/floor/carpet/neon/simple/pink/nodots,
-/area/ruin/space/has_grav/hotel/guestroom/room_2)
->>>>>>> origin/master
 "aF" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/cup/glass/bottle/champagne,
