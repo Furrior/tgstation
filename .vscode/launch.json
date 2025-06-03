@@ -6,14 +6,20 @@
 			"request": "launch",
 			"name": "Launch DreamSeeker",
 			"preLaunchTask": "Build All",
-			"dmb": "${workspaceFolder}/${command:CurrentDMB}"
+			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
 			"request": "launch",
 			"name": "Launch DreamSeeker (low memory mode)",
 			"preLaunchTask": "Build All (low memory mode)",
-			"dmb": "${workspaceFolder}/${command:CurrentDMB}"
+			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -27,14 +33,20 @@
 			"request": "launch",
 			"name": "Launch DreamSeeker (testing + low memory mode)",
 			"preLaunchTask": "Build All (testing + low memory mode)",
-			"dmb": "${workspaceFolder}/${command:CurrentDMB}"
+			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
 			"request": "launch",
 			"name": "Launch DreamSeeker (map testing)",
 			"preLaunchTask": "Build All (map testing)",
-			"dmb": "${workspaceFolder}/${command:CurrentDMB}"
+			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -42,7 +54,10 @@
 			"name": "Launch DreamDaemon",
 			"preLaunchTask": "Build All",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
-			"dreamDaemon": true
+			"dreamDaemon": true,
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -50,7 +65,10 @@
 			"name": "Launch DreamDaemon (low memory mode)",
 			"preLaunchTask": "Build All (low memory mode)",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
-			"dreamDaemon": true
+			"dreamDaemon": true,
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -58,7 +76,10 @@
 			"name": "Launch DreamDaemon (testing)",
 			"preLaunchTask": "Build All (testing)",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
-			"dreamDaemon": true
+			"dreamDaemon": true,
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -66,7 +87,10 @@
 			"name": "Launch DreamDaemon (testing + low memory mode)",
 			"preLaunchTask": "Build All (testing + low memory mode)",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
-			"dreamDaemon": true
+			"dreamDaemon": true,
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"type": "byond",
@@ -74,7 +98,10 @@
 			"name": "Launch DreamDaemon (map testing)",
 			"preLaunchTask": "Build All (map testing)",
 			"dmb": "${workspaceFolder}/${command:CurrentDMB}",
-			"dreamDaemon": true
+			"dreamDaemon": true,
+			"env": {
+				"WINEPREFIX": "/run/media/furior/Data/winegames/byond"
+			}
 		},
 		{
 			"name": "Debug External Libraries",
