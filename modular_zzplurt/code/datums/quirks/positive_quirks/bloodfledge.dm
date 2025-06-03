@@ -1424,7 +1424,7 @@
 
 	// Condition: Insufficient blood volume
 	else
-		if(action_owner.blood_volume > BLOOD_VOLUME_SURVIVE)
+		if(action_owner.blood_volume < BLOOD_VOLUME_NORMAL) // WHITEMOON EDIT: Требование к использованию способности повышено с 20% до 100% крови и выше
 			revive_failed += "\n- You don't have enough blood volume left!"
 
 	// Condition: Damage limit, brute
@@ -1545,7 +1545,7 @@
 	// Blood volume mode
 	else
 		// Set dangerously low blood
-		action_owner.blood_volume = min(action_owner.blood_volume, BLOOD_VOLUME_SURVIVE)
+		action_owner.blood_volume = min(action_owner.blood_volume, BLOOD_VOLUME_SAFE) //WHITEMOON EDIT: Значение повышено с Survive до Safe, т.к. в противном случае после использования способности гемофаги умирают мгновенно
 
 	// Apply dizzy effect
 	action_owner.adjust_dizzy_up_to(20 SECONDS, 60 SECONDS)

@@ -396,7 +396,7 @@ export const BubberChangelog = (props) => {
 
   const header = (
     <Section>
-      <h1>S.P.L.U.R.T-tg</h1> {/* SPLURT EDIT ADDITION: Changelog 3 */}
+      <h1>WhiteMoon-Station</h1>
       <p>
         <b>Thanks to: </b>
         /tg/station 13, Effigy, Stellar Haven, Baystation 12, /vg/station,
@@ -405,17 +405,14 @@ export const BubberChangelog = (props) => {
         contributed to the game.
       </p>
       <p>
-        {'Current organization members can be found '}
-        <a href="https://github.com/orgs/SPLURT-Station/people">here</a>
-        {', recent GitHub contributors can be found '}
-        <a href="https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pulse/monthly">
-          here
+        <a href="https://github.com/BlueMoon-Labs/WhiteMoon-Station">
+          Репозиторий тута
         </a>
         .
       </p>
       <p>
-        {'You can also join our discord '}
-        <a href="https://discord.com/invite/wynHVMzHzC">here</a>!
+        {'Вы можете присоединиться к нашему Дискорд-Серверу '}
+        <a href="https://discord.gg/NAp3NykhCM">вот здесь</a>!
       </p>
       <DateDropdown
         dates={dates}

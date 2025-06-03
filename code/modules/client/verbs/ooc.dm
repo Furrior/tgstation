@@ -82,6 +82,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(CONFIG_GET(flag/enable_cross_server_ooc)) //SKYRAT EDIT ADDITION
 		send_ooc_to_other_server(ckey, msg) //SKYRAT EDIT ADDITION
 
+	GLOB.bot_ooc_sending_que += list(list("author" = holder && holder.fakekey ? holder.fakekey : key, "message" = msg))
+
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.read_preference(/datum/preference/color/ooc_color) || GLOB.normal_ooc_colour]'>[icon2html('icons/ui/chat/member_content.dmi', world, "blag")][keyname]</font>"

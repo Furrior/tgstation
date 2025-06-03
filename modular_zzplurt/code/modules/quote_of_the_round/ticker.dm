@@ -1,3 +1,19 @@
+#define FUNNY_VIDEOS_FILE_NAME "config/discord_videos.json"
+
+/proc/init_discord_videos()
+	if (!fexists(FUNNY_VIDEOS_FILE_NAME))
+		return null
+	var/list/videos_json = json_decode(file2text(FUNNY_VIDEOS_FILE_NAME))
+	if (!length(videos_json))
+		return null
+
+	var/list/contents = list()
+	for (var/entry in videos_json)
+		if (entry["content"])
+			contents += entry["content"]
+
+	return contents
+
 /datum/controller/subsystem/ticker/declare_completion(was_forced)
 	if(!CONFIG_GET(flag/roundend_embeds)) // SPLURT EDIT - Discord rounded embeds.
 		return ..()
@@ -36,11 +52,11 @@
 	var/news_report = send_news_report()
 
 	var/first_death = ""
-	if(findtext(news_report, "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"))
-		first_death = "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"
+	if(findtext(news_report, "Санкционированные Nanotrasen псайкеры с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"))
+		first_death = "Санкционированные Nanotrasen псайкеры с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"
 		news_report = replacetext(news_report, first_death, "")
-	else if(findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:"))
-		var/start_pos = findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:")
+	else if(findtext(news_report, "Санкционированные Nanotrasen псайкеры засекли слабые следы человека, якобы умершего неподалеку от станции. Его имя было:"))
+		var/start_pos = findtext(news_report, "Санкционированные Nanotrasen псайкеры засекли слабые следы человека, якобы умершего неподалеку от станции. Его имя было:")
 		var/end_pos = findtext(news_report, "(Shift on", start_pos)
 		first_death = copytext(news_report, start_pos, end_pos)
 		news_report = replacetext(news_report, first_death, "")
@@ -52,14 +68,14 @@
 	embed.colour = "#[CONFIG_GET(string/roundend_embed_color)]"
 
 	// Author
-	embed.author = new("S.P.L.U.R.T. Round Reports")
+	embed.author = new("Новости Белых Лун")
 	embed.author.url = embed.url
 
 	// Title
 	embed.title = quote_of_the_round_data["map_text"]
 
 	// Description
-	embed.description = "The current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!"
+	embed.description = "Текущий раунд закончился. Пожалуйста, приготовьтесь к сменному репортажу Nanotrasen News Network!"
 	if(length(trim(news_report)))
 		embed.description += "\n\n```\n[news_report]\n```"
 
@@ -67,11 +83,11 @@
 	embed.fields = list()
 	if(length(first_death))
 		embed.fields += new /datum/tgs_chat_embed/field(
-			"First Death",
+			"Первая смерть:",
 			"```\n[first_death]\n```"
 		)
 	embed.fields += new /datum/tgs_chat_embed/field(
-		"Quote of the round",
+		"Цитата раунда:",
 		quote_of_the_round_data["quote_presentation"] + (quote_of_the_round_data["quote_text"] ? "\n\n[quote_of_the_round_data["quote_text"]]\n[quote_of_the_round_data["quote_attribution"]]" : "")
 	)
 
@@ -88,10 +104,22 @@
 		embed.thumbnail = new(thumbnail_url)
 
 	// Footer
-	embed.footer = new("Round #[GLOB.round_id] ([SSgamemode.storyteller.name])")
+	embed.footer = new("Раунд #[GLOB.round_id] ([SSgamemode.storyteller.name])")
 	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
 
-	var/datum/tgs_message_content/message = new("# Round #[GLOB.round_id] ([SSgamemode.storyteller.name]) just ended. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
+	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@&[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
 	message.embed = embed
+
+	var/list/random_links = init_discord_videos()
+	var/random_link = pick(random_links)
+	if(!random_links)
+		random_link = "Видосики не найдены."
+	var/message_for_video = pick(CONFIG_GET(str_list/randomizing_message_for_video))
+	var/last_roundend_message = "**[message_for_video]**\n [random_link]"
+	var/datum/tgs_message_content/random_message = new(last_roundend_message)
 	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
 		send2chat(message, channel_tag)
+		spawn(5)
+			send2chat(random_message, channel_tag)
+
+#undef FUNNY_VIDEOS_FILE_NAME

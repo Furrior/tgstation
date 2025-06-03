@@ -18,6 +18,7 @@
 						/obj/item/cautery/advanced,
 						/obj/item/blood_filter/advanced,
 						/obj/item/healthanalyzer/advanced,
+						/obj/item/surgical_drapes, //BLUEMOON ADD т.к. изначально тряпок у боргов нет, а омнитулы с ними удаляются
 						)
 	items_to_remove = list(
 						/obj/item/borg/cyborg_omnitool/medical,

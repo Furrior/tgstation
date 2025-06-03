@@ -75,13 +75,13 @@
 /// Trait for quirk: Modular Limbs
 #define TRAIT_MODULAR_LIMBS		"modular_limbs"
 /// Trait for quirk: Vacuum Resistance
-#define TRAIT_VACUUM_RESIST		"vacuum_resist"
+// #define TRAIT_VACUUM_RESIST		"vacuum_resist"
 /// Trait for quirk: Overweight
 #define TRAIT_OVERWEIGHT		"overweight"
 /// Trait for quirk: Trashcan
 #define TRAIT_TRASHCAN			"trashcan"
 /// Trait for quirk: Quick Step
-#define TRAIT_SPEEDY_STEP		"speedy_step"
+// #define TRAIT_SPEEDY_STEP		"speedy_step"
 
 ///
 // Element traits
@@ -105,3 +105,6 @@
 
 // These traits are applied to /obj/item/organ/liver
 #define TRAIT_CARGO_METABOLISM "cargo_metabolism"
+
+/// Trait that makes you unable to get pregnant, make people pregnant, and triggers abortions too
+#define TRAIT_INFERTILE "pregnancy_infertile"

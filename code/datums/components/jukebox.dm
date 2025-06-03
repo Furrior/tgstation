@@ -1,4 +1,4 @@
-// Reasons for appling STATUS_MUTE to a mob's sound status
+/*// Reasons for appling STATUS_MUTE to a mob's sound status
 /// The mob is deaf
 #define MUTE_DEAF (1<<0)
 /// The mob has disabled jukeboxes in their preferences
@@ -28,7 +28,7 @@
 
 	/// Volume of the songs played. Also serves as the max volume.
 	/// Do not set directly, use set_new_volume() instead.
-	VAR_PROTECTED/volume = 50
+	VAR_PROTECTED/volume = 100
 
 	/// Range at which the sound plays to players, can also be a view "XxY" string
 	VAR_PROTECTED/sound_range
@@ -192,7 +192,7 @@
 
 /// Helper to kickstart the music for all mobs in hearing range of the jukebox.
 /datum/jukebox/proc/start_music()
-	for(var/mob/nearby in hearers(sound_range, parent))
+	for(var/mob/nearby in hearers(sound_range, parent.loc))
 		register_listener(nearby)
 
 /// Helper to get all mobs currently, ACTIVELY listening to the jukebox.
@@ -407,3 +407,4 @@
 	song_name = "Tintin on the Moon"
 	song_length = 3 MINUTES + 52 SECONDS
 	song_beat = 1 SECONDS
+*/

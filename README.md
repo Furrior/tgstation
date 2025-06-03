@@ -1,6 +1,6 @@
-## SPLURT Station (Bubberstation Downstream)
+## Whitemoon Station (SPLURT-station/Bubberstation Downstream)
 
-[![CI Suite](https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/actions/workflows/ci_suite.yml)
+[![CI Suite](https://github.com/BlueMoon-Labs/WhiteMoon-Station/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/BlueMoon-Labs/WhiteMoon-Station/actions/workflows/ci_suite.yml)
 
 [![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
@@ -8,11 +8,11 @@
 |---------------------------|------------------------------------------------|
 | Git / GitHub cheatsheet   | [https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833](https://www.notion.so/Git-GitHub-61bc81766b2e4c7d9a346db3078ce833) |
 | Guide to Modularization   | [./modular_skyrat/readme.md](./modular_skyrat/readme.md) |
-| Website                   | [https://splurtstation.com](https://splurtstation.com) |
-| Code                      | [https://github.com/SPLURT-Station/S.P.L.U.R.T-tg](https://github.com/SPLURT-Station/S.P.L.U.R.T-tg) |
-| Wiki                      | [https://splurtstation.com](https://splurtstation.com) |
+| Website                   | [https://wiki.bubberstation.org/](https://wiki.bubberstation.org/) |
+| Code                      | [https://github.com/BlueMoon-Labs/WhiteMoon-Station](https://github.com/BlueMoon-Labs/WhiteMoon-Station) |
+| Wiki                      | [https://wiki.bubberstation.org/](https://wiki.bubberstation.org/) |
 | Codedocs                  | [https://skyrat-ss13.github.io/Skyrat-tg/](https://skyrat-ss13.github.io/Skyrat-tg/) |
-| S.P.L.U.R.T Station Discord     | [https://discord.gg/wynHVMzHzC](https://discord.gg/wynHVMzHzC) |
+| S.P.L.U.R.T Station Discord     | [https://discord.gg/NAp3NykhCM](https://discord.gg/NAp3NykhCM) |
 
 This is S.P.L.U.R.T Station's downstream fork of bubberstation, which is in turn a fork of TG (formerly skyrat).
 
@@ -23,8 +23,8 @@ Space Station 13 is a paranoia-laden round-based roleplaying game set against th
 ## Contribution Rules and Guidelines
 
 **1. Do Not Be A Dick**
-- The S.P.L.U.R.T. main repository is run by and contributed by volunteers and hobbiests. Please be considerate with the people who help maintain our codebase. We reserve the right to permanently remove anyone who does not show both our contributors and maintainers common decency.
-- S.P.L.U.R.T. does not operate a strict "goodboy" points system or have defined goals, and anyone is welcome to contribute to this project. That being said, the maintainers of this project are free to curate comments as seen fit to uphold a respectful environment.
+- The Whitemoon main repository is run by and contributed by volunteers and hobbiests. Please be considerate with the people who help maintain our codebase. We reserve the right to permanently remove anyone who does not show both our contributors and maintainers common decency.
+- Whitemoon does not operate a strict "goodboy" points system or have defined goals, and anyone is welcome to contribute to this project. That being said, the maintainers of this project are free to curate comments as seen fit to uphold a respectful environment.
 
 **2. Modularization Standards Will be Upheld**
 - This codebase is a active downstream to Bubberstation with frequent upstream merges.
