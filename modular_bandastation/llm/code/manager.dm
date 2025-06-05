@@ -23,11 +23,15 @@ SUBSYSTEM_DEF(llm)
 			registered_llm_tools += tool_instance
 			logger.Log(LOG_CATEGORY_DEBUG, "Registered LLM tool: [tool_instance.type] ([tool_instance.tool_name])")
 
-	var/initial_test_prompt = "Привет, ИИ. Какое сейчас время в игре?" // More specific prompt
-	var/datum/llm_tool/time_tool_for_test = get_registered_tool(/datum/llm_tool/get_round_time)
+	test()
+
+	return SS_INIT_SUCCESS
+
+/datum/controller/subsystem/llm/proc/test()
+	var/initial_test_prompt = "Привет, ИИ. Какое сейчас время в игре? Желательно, скажи это всем."
 	var/list/test_tools = list()
-	if(time_tool_for_test)
-		test_tools += time_tool_for_test
+	test_tools += get_registered_tool(/datum/llm_tool/get_round_time)
+	test_tools += get_registered_tool(/datum/llm_tool/output_to_world)
 
 	world.log << "LLM Subsystem Init: Testing LLM."
 
@@ -37,8 +41,6 @@ SUBSYSTEM_DEF(llm)
 		tools_to_offer = test_tools
 	)
 	world.log << "Test response: [test_response]"
-
-	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/llm/proc/can_run()
 	return CONFIG_GET(string/llm_endpoint) && CONFIG_GET(string/llm_api_key)
