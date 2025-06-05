@@ -1,7 +1,7 @@
 /datum/llm_tool
 	var/tool_name = "override_me"
 	var/tool_description = "override_me"
-	var/list/parameter_schema = list( // JSON Schema as a DM list
+	var/list/parameter_schema = list(
 		"type" = "object",
 		"properties" = list(),
 		"required" = list()
@@ -14,12 +14,12 @@
 
 /datum/llm_tool/get_round_time
 	tool_name = "get_round_time"
-	tool_description = "Gets the current in-round time."
-	parameter_schema = list( // No parameters for this simple tool
+	tool_description = "Gets the current in-round time (time passed since the start of the round)."
+	parameter_schema = list(
 		"type" = "object",
 		"properties" = list(),
 		"required" = list()
 	)
 
 /datum/llm_tool/get_round_time/execute(list/arguments)
-	return list("round_time" = ROUND_TIME())
+	return list("round_time" = STATION_TIME_PASSED())
