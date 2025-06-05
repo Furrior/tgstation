@@ -4,3 +4,4 @@
 #include "code/manager.dm"
 #include "code/tool.dm"
 #include "code/true_ai/ai_tools.dm"
+#include "code/true_ai/ai_mob.dm"

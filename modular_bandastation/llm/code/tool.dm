@@ -9,7 +9,7 @@
 
 // Arguments will be a DM list parsed from the LLM's JSON arguments
 // Should return a value that can be json_encode'd, or a JSON string directly.
-/datum/llm_tool/proc/execute(list/arguments)
+/datum/llm_tool/proc/execute(list/arguments, mob/user = null)
 	CRASH("Tool [type] does not implement execute()")
 
 /datum/llm_tool/get_round_time
@@ -21,7 +21,7 @@
 		"required" = list()
 	)
 
-/datum/llm_tool/get_round_time/execute(list/arguments)
+/datum/llm_tool/get_round_time/execute(list/arguments, mob/user = null)
 	return list("round_time" = STATION_TIME_PASSED())
 
 
@@ -40,7 +40,7 @@
 		"required" = list("message")
 	)
 
-/datum/llm_tool/output_to_world/execute(list/arguments)
+/datum/llm_tool/output_to_world/execute(list/arguments, mob/user = null)
 		var/message_to_broadcast = arguments["message"]
 
 		world.log << "AI Broadcasting message: [message_to_broadcast]"

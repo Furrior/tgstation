@@ -1,5 +1,7 @@
 SUBSYSTEM_DEF(llm)
 	name = "LLM Manager"
+	wait = 30 SECONDS
+
 
 	var/list/available_models = list(
 		"deepseek/deepseek-chat-v3-0324:free",
@@ -10,6 +12,8 @@ SUBSYSTEM_DEF(llm)
 	var/default_model = "google/gemini-2.5-flash-preview-05-20"
 
 	var/list/datum/llm_tool/registered_llm_tools = list()
+
+	var/list/mob/true_ai/true_ais = list()
 
 /datum/controller/subsystem/llm/Initialize()
 	if(!can_run())
@@ -27,20 +31,13 @@ SUBSYSTEM_DEF(llm)
 
 	return SS_INIT_SUCCESS
 
+/datum/controller/subsystem/llm/fire(resumed)
+	for(var/mob/true_ai/true_ai in true_ais)
+		true_ai.process_true_ai()
+
+
 /datum/controller/subsystem/llm/proc/test()
-	var/initial_test_prompt = "Привет, ИИ. Какое сейчас время в игре? Желательно, скажи это всем."
-	var/list/test_tools = list()
-	test_tools += get_registered_tool(/datum/llm_tool/get_round_time)
-	test_tools += get_registered_tool(/datum/llm_tool/output_to_world)
-
-	world.log << "LLM Subsystem Init: Testing LLM."
-
-	var/test_response = get_completion_with_iteration(
-		"You are a helpful game assistant. Use tools when appropriate to answer questions about the game.",
-		initial_test_prompt,
-		tools_to_offer = test_tools
-	)
-	world.log << "Test response: [test_response]"
+	var/mob/true_ai/true_ai = new(locate(140,140,2))
 
 /datum/controller/subsystem/llm/proc/can_run()
 	return CONFIG_GET(string/llm_endpoint) && CONFIG_GET(string/llm_api_key)
@@ -88,7 +85,7 @@ SUBSYSTEM_DEF(llm)
 			body["tool_choice"] = "auto"
 	return body
 
-/datum/controller/subsystem/llm/proc/get_completion_with_iteration(initial_system_prompt as text, initial_user_prompt as text, list/datum/llm_tool/tools_to_offer = null, max_iterations = 5)
+/datum/controller/subsystem/llm/proc/get_completion_with_iteration(initial_system_prompt as text, initial_user_prompt as text, list/datum/llm_tool/tools_to_offer = null, max_iterations = 5, user = null)
 	if(!can_run())
 		return "Error: LLM Subsystem not configured (endpoint/API key missing)."
 
@@ -182,7 +179,7 @@ SUBSYSTEM_DEF(llm)
 
 				var/tool_result_content_json_string = ""
 				if(tool_to_run)
-					var/tool_execution_result = tool_to_run.execute(function_args)
+					var/tool_execution_result = tool_to_run.execute(function_args, user)
 					if(islist(tool_execution_result))
 						tool_result_content_json_string = json_encode(tool_execution_result)
 					else if(istext(tool_execution_result))
