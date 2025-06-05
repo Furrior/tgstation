@@ -43,7 +43,6 @@
 	messages_to_process += list(list(raw_message, speaker, radio_freq))
 
 /mob/true_ai/proc/process_true_ai()
-	se
 	if(!length(messages_to_process))
 		return
 
