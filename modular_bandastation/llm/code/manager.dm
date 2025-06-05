@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(llm)
 	name = "LLM Manager"
-	wait = 30 SECONDS
+	wait = 10 SECONDS
 
 
 	var/list/available_models = list(
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(llm)
 
 
 /datum/controller/subsystem/llm/proc/test()
-	var/mob/true_ai/true_ai = new(locate(140,140,2))
+	var/mob/true_ai/true_ai = new()
 
 /datum/controller/subsystem/llm/proc/can_run()
 	return CONFIG_GET(string/llm_endpoint) && CONFIG_GET(string/llm_api_key)
@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(llm)
 			body["tool_choice"] = "auto"
 	return body
 
-/datum/controller/subsystem/llm/proc/get_completion_with_iteration(initial_system_prompt as text, initial_user_prompt as text, list/datum/llm_tool/tools_to_offer = null, max_iterations = 5, user = null)
+/datum/controller/subsystem/llm/proc/get_completion_with_iteration(initial_system_prompt as text, initial_user_prompt as text, list/datum/llm_tool/tools_to_offer = null, max_iterations = 8, user = null)
 	if(!can_run())
 		return "Error: LLM Subsystem not configured (endpoint/API key missing)."
 

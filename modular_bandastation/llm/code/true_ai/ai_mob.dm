@@ -22,7 +22,12 @@
 	lawset = new default_lawset_path
 
 	tools = list(
-		SSllm.get_registered_tool(/datum/llm_tool/get_manifest)
+		SSllm.get_registered_tool(/datum/llm_tool/get_manifest),
+		SSllm.get_registered_tool(/datum/llm_tool/say_message),
+		SSllm.get_registered_tool(/datum/llm_tool/get_machinery_list),
+		SSllm.get_registered_tool(/datum/llm_tool/get_machinery_actions_list),
+		SSllm.get_registered_tool(/datum/llm_tool/perform_machinery_action),
+		SSllm.get_registered_tool(/datum/llm_tool/get_crew_member_position)
 	)
 
 /mob/true_ai/Destroy()
