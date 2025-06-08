@@ -59,3 +59,18 @@
 	name = "Andromeda Mask"
 	desc = "A close-fitting tactical mask used by shark-like species. It has moderate protection against ballistic damage and a flap for closed breathing."
 	icon_state = "akula_mask"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_one"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_two"
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_three"

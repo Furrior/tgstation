@@ -50,7 +50,7 @@
 /datum/objective/mutiny/update_explanation_text()
 	..()
 	if(target?.current)
-		explanation_text = "Убейте или изгоните [target.name], в должности [!target_role_type ? target.assigned_role.title : target.special_role]."
+		explanation_text = "Уничтожьте или изгоните [target.name], в должности [!target_role_type ? target.assigned_role.title : target.special_role]."
 	else
 		explanation_text = "Свободное задание."
 
