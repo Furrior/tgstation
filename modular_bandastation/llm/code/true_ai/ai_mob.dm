@@ -67,4 +67,4 @@
 	var/response = SSllm.get_completion_with_iteration(get_system_instrustions(), prompt, tools, user = src)
 	messages_to_process = list()
 
-	say(response)
+	say("ИИ ДЕБАГ: [response]")

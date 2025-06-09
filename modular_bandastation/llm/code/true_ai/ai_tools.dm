@@ -38,7 +38,7 @@
 /datum/llm_tool/say_message/execute(list/arguments, mob/user = null)
 	var/message = arguments["message"]
 
-	user.say("test say: [message]") // TODO: radio
+	user.say(message) // TODO: radio
 
 	return list("said_message" = message)
 
