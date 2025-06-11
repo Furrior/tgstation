@@ -806,7 +806,4 @@
 	if(HAS_TRAIT(src, TRAIT_NO_SIDE_KICK)) // added as an extra check, just in case
 		. &= ~SHOVE_CAN_KICK_SIDE
 
-/mob/living/carbon/create_splatter(splatter_dir)
-	new /obj/effect/temp_visual/dir_setting/bloodsplatter(get_turf(src), splatter_dir, dna?.blood_type.get_color(blood_DNA = get_blood_dna_list())) // SPLURT EDIT - Custom Blood Color
-
 #undef SHAKE_ANIMATION_OFFSET

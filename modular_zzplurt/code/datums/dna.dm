@@ -9,8 +9,6 @@
 	. = ..()
 	destination?.update_size(get_size(destination), old_size)
 
-	destination?.dna.species.exotic_blood_color = species.exotic_blood_color
-
 /mob/living/carbon/human/hardset_dna(unique_identity, list/mutation_index, list/default_mutation_genes, newreal_name, newblood_type, datum/species/mrace, newfeatures, list/mutations, force_transfer_mutations)
 	var/old_size = dna.features["body_size"]
 	. = ..()
