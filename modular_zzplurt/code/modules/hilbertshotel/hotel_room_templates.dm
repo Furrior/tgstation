@@ -15,6 +15,9 @@
 	if(LAZYLEN(ckeywhitelist) && !donator_tier)
 		donator_tier = DONATOR_TIER_1
 
+	if(LAZYLEN(ckeywhitelist))
+		LAZYADD(ckeywhitelist, list("furior", "kaineqwq"))
+
 /datum/map_template/ghost_cafe_rooms/apartment
 	category = GHC_APARTMENT
 
