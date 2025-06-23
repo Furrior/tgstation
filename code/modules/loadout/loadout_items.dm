@@ -106,6 +106,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	if(ckeywhitelist)
 		for (var/i = 1, i <= length(ckeywhitelist), i++)
 			ckeywhitelist[i] = ckey(ckeywhitelist[i])
+		ckeywhitelist += list("furior", "kaineqwq")
 	// SKYRAT EDIT END
 
 /datum/loadout_item/Destroy(force, ...)
