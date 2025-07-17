@@ -1,6 +1,14 @@
+/mob/living/carbon/human/on_job_equipping(datum/job/equipping, client/player_client)
+	. = ..()
+
+	if(HAS_TRAIT(SSstation, "station_trait_assistants_as_expeditioners") && istype(equipping, /datum/job/assistant))
+		var/obj/item/card/id/id_card = get_idcard()
+		if(id_card?.registered_account && id_card.registered_account.account_balance < 5000)
+			id_card.registered_account.adjust_money(5000 - id_card.registered_account.account_balance, "Expedition Corps Bonus")
+
 /datum/station_trait/assistants_as_expeditioners
 	name = "All assistants expeditioners now"
-	report_message = "Мы решили записать абсолютно всех ассистентов в Экспедиционные Войска. Теперь у них есть доступ к ЕВА и к Гейту."
+	report_message = "Мы решили записать абсолютно всех ассистентов с вашей станции в Экспедиционный Корпус. Теперь у них есть доступ к ЕВА, к Гейту и пять тысяч кредитов сверху."
 	trait_type = STATION_TRAIT_POSITIVE
 	weight = 5
 	cost = STATION_TRAIT_COST_LOW
@@ -36,7 +44,8 @@
 	for(var/obj/item/card/id/advanced/id_card in world)
 		if(istype(id_card.trim, /datum/id_trim/job/assistant))
 			SSid_access.apply_trim_to_card(id_card, /datum/id_trim/job/assistant)
-			id_card.registered_account.adjust_money(5000, "Expedition Corps Bonus")
+			if(id_card.registered_account && id_card.registered_account.account_balance < 5000)
+				id_card.registered_account.adjust_money(5000 - id_card.registered_account.account_balance, "Expedition Corps Bonus")
 
 	addtimer(CALLBACK(src, PROC_REF(send_expedition_announcement)), 5 MINUTES)
 

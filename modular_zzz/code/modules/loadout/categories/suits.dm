@@ -83,7 +83,12 @@
 	item_path = /obj/item/clothing/suit/toggle/kazeshini_cape
 	ckeywhitelist = list("mercreaper")
 
-/datum/loadout_item/suit/armor/kazeshini_cape
-	name = "Kazeshini Cape"
+/datum/loadout_item/suit/armor/kazeshini_cape/alt
+	name = "Alt Kazeshini Cape"
 	item_path = /obj/item/clothing/suit/toggle/kazeshini_cape/alt
-	ckeywhitelist = list("mercreaper")
+	ckeywhitelist = list("mercreaper", "siamant")
+
+/datum/loadout_item/suit/montur
+	name = "Dark Montur"
+	item_path = /obj/item/clothing/suit/montur
+	ckeywhitelist = list("enigma418")

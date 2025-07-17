@@ -10,6 +10,15 @@
 	icon = 'modular_skyrat/modules/exp_corps/icons/survival_pack.dmi'
 	illustration = null
 
+/obj/item/storage/box/expeditionary_survival/PopulateContents()
+	new /obj/item/storage/box/donkpockets(src)
+	new /obj/item/flashlight/glowstick(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
+	new /obj/item/reagent_containers/cup/glass/waterbottle(src)
+	new /obj/item/reagent_containers/blood/universal(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/storage/pill_bottle/multiver(src)
+
 /obj/structure/closet/crate/secure/exp_corps
 	name = "Expedition Crate"
 	icon_state = "expcrate"
@@ -89,6 +98,7 @@
 /obj/structure/closet/crate/secure/exp_corps/combat_tech/PopulateContents()
 	new /obj/item/storage/medkit/emergency(src)
 	new /obj/item/storage/box/expeditionary_survival(src)
+	new /obj/item/clothing/glasses/welding/up(src)
 	new /obj/item/radio(src)
 	new /obj/item/melee/tomahawk(src)
 	new /obj/item/clothing/gloves/chief_engineer/expeditionary_corps(src)
@@ -98,17 +108,6 @@
 	new /obj/item/storage/backpack/duffelbag/expeditionary_corps(src)
 	new /obj/item/skillchip/job/engineer(src)
 	new /obj/item/storage/pouch/material(src)
-	new /obj/item/clothing/under/rank/expeditionary_corps(src)
-	new /obj/item/clothing/shoes/combat/expeditionary_corps(src)
-
-/obj/item/storage/box/expeditionary_survival/PopulateContents()
-	new /obj/item/storage/box/donkpockets(src)
-	new /obj/item/flashlight/glowstick(src)
-	new /obj/item/tank/internals/emergency_oxygen/double(src)
-	new /obj/item/reagent_containers/cup/glass/waterbottle(src)
-	new /obj/item/reagent_containers/blood/universal(src)
-	new /obj/item/reagent_containers/syringe(src)
-	new /obj/item/storage/pill_bottle/multiver(src)
 	new /obj/item/clothing/under/rank/expeditionary_corps(src)
 	new /obj/item/clothing/shoes/combat/expeditionary_corps(src)
 

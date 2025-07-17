@@ -68,3 +68,13 @@
 	worn_icon = 'modular_zzz/icons/mob/clothing/heads.dmi'
 	icon_state = "erthelmet_med"
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/head/sp_beret
+	name = "Space beret"
+	desc = "Beret has a comfortable fabric, that is very comfortable to wear, it also has two distinctive stars in silver color. That represents a two stars of ariral's homeworld and their ambitions in space within the community of species."
+	icon_state = "space_beret"
+	icon = 'modular_zzz/icons/obj/clothing/heads.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/heads.dmi'
+	worn_icon_digi = 'modular_zzz/icons/mob/clothing/heads.dmi'
+	lefthand_file = 'modular_zzz/icons/mob/clothing/lefthand.dmi'
+	righthand_file = 'modular_zzz/icons/mob/clothing/righthand.dmi'
