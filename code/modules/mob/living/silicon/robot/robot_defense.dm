@@ -172,7 +172,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		balloon_alert(user, "toner filled")
 		return ITEM_INTERACT_SUCCESS
 
-	if(istype(tool, /obj/item/flashlight))
+	if(istype(tool, /obj/item/flashlight) && !istype(tool, /obj/item/flashlight/emp)) //subtypes my behated. OOP was a dumb idea
 		if(user.combat_mode)
 			return NONE
 		if(!opened)
@@ -479,7 +479,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 	laws = new /datum/ai_laws/syndicate_override
 	if(user)
 		to_chat(src, span_danger("ALERT: [user.real_name] is your new master. Obey your new laws and [user.p_their()] commands."))
-		set_zeroth_law("Only [user.real_name] and people [user.p_they()] designate[user.p_s()] as being such are Syndicate Agents.")
+		set_zeroth_law("Только [user.real_name] и прочие существа, кого [user.real_name] обозначит Агентом Синдиката, являются Агентом Синдиката.")
 	laws.associate(src)
 	update_icons()
 

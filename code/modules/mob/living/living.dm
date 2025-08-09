@@ -689,7 +689,7 @@
 /**
  * Returns the access list for this mob
  */
-/mob/living/proc/get_access()
+/mob/living/proc/get_access() as /list
 	var/list/access_list = list()
 	SEND_SIGNAL(src, COMSIG_MOB_RETRIEVE_SIMPLE_ACCESS, access_list)
 	var/obj/item/card/id/id = get_idcard()
@@ -2859,6 +2859,7 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 /// Proc for giving a mob a new 'friend', generally used for AI control and targeting. Returns false if already friends or null if qdeleted.
 /mob/living/proc/befriend(mob/living/new_friend)
 	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(new_friend, COMSIG_LIVING_MADE_NEW_FRIEND, src)
 	if(QDELETED(new_friend))
 		return
 	var/friend_ref = REF(new_friend)
@@ -2892,7 +2893,7 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 		if(cargo_account) //Just in case
 			cargo_account.adjust_money(-min(ransom_price, cargo_account.account_balance)) //Not so much, especially for competent cargo. Plus this can't be mass-triggered like it has been done with contractors
-		priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. As is policy we've taken a portion of the station's funds to offset the overall cost.", "Nanotrasen Asset Protection", has_important_message = TRUE)
+		priority_announce("Один из членов вашей команды был захвачен конкурирующей организацией. Нам пришлось заплатить выкуп, чтобы вернуть его. Согласно политике, мы изъяли часть средств станции, чтобы компенсировать расходы.", "Защита активов Nanotrasen", has_important_message = TRUE)
 
 	///The price should be high enough that the contractor can't just buy 'em back with their cut alone.
 	var/datum/market_item/hostage/market_item = new(src, black_market_price || ransom_price)
@@ -3047,7 +3048,7 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	var/our_fitness_level = calculate_fitness()
 	var/their_fitness_level = scouter.calculate_fitness()
 
-	var/comparative_fitness = our_fitness_level / their_fitness_level
+	var/comparative_fitness = their_fitness_level ? our_fitness_level / their_fitness_level : 1
 
 	if (comparative_fitness > 2)
 		scouter.set_jitter_if_lower(comparative_fitness SECONDS)

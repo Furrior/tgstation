@@ -8,8 +8,8 @@
 	return time2text(wtime, format, NO_TIMEZONE)
 
 ///returns the current IC station time in a world.time format
-/proc/station_time(display_only = FALSE, wtime=world.time)
-	return ((((wtime - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)
+/proc/station_time(wtime = world.time)
+	return (((wtime - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % (24 HOURS)
 
 ///returns the current IC station time in a human readable format
 /proc/station_time_timestamp(format = "hh:mm:ss", wtime)
@@ -19,11 +19,11 @@
 	if(isnum(force_set))
 		SSticker.gametime_offset = force_set
 		return
-	SSticker.gametime_offset = rand(0, 864000) //hours in day * minutes in hour * seconds in minute * deciseconds in second
+	SSticker.gametime_offset = rand(0, 24 HOURS) //hours in day * minutes in hour * seconds in minute * deciseconds in second
 	if(prob(50))
-		SSticker.gametime_offset = FLOOR(SSticker.gametime_offset, 3600)
+		SSticker.gametime_offset = FLOOR(SSticker.gametime_offset, 1 HOURS)
 	else
-		SSticker.gametime_offset = CEILING(SSticker.gametime_offset, 3600)
+		SSticker.gametime_offset = CEILING(SSticker.gametime_offset, 1 HOURS)
 
 ///returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format. Do not use for SQL, use NOW() instead
 /proc/ISOtime(timevar)
@@ -95,29 +95,29 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 /proc/DisplayTimeText(time_value, round_seconds_to = 0.1)
 	var/second = FLOOR(time_value * 0.1, round_seconds_to)
 	if(!second)
-		return "right now"
+		return "0 секунд"
 	if(second < 60)
-		return "[second] second[(second != 1)? "s":""]"
+		return "[second] [(second != 1)? "секунд":"секунда"]"
 	var/minute = FLOOR(second / 60, 1)
 	second = FLOOR(MODULUS(second, 60), round_seconds_to)
 	var/secondT
 	if(second)
-		secondT = " and [second] second[(second != 1)? "s":""]"
+		secondT = " и [second] [(second != 1)? "секунд":"секунда"]"
 	if(minute < 60)
-		return "[minute] minute[(minute != 1)? "s":""][secondT]"
+		return "[minute] [(minute != 1)? "минут":"минута"][secondT]"
 	var/hour = FLOOR(minute / 60, 1)
 	minute = MODULUS(minute, 60)
 	var/minuteT
 	if(minute)
-		minuteT = " and [minute] minute[(minute != 1)? "s":""]"
+		minuteT = " и [minute] [(minute != 1)? "минут":"минута"]"
 	if(hour < 24)
-		return "[hour] hour[(hour != 1)? "s":""][minuteT][secondT]"
+		return "[hour] [(hour != 1)? "часов":"час"][minuteT][secondT]"
 	var/day = FLOOR(hour / 24, 1)
 	hour = MODULUS(hour, 24)
 	var/hourT
 	if(hour)
-		hourT = " and [hour] hour[(hour != 1)? "s":""]"
-	return "[day] day[(day != 1)? "s":""][hourT][minuteT][secondT]"
+		hourT = " и [hour] [(hour != 1)? "часов":"час"]"
+	return "[day] [(day != 1)? "дней":"день"][hourT][minuteT][secondT]"
 
 
 /proc/daysSince(realtimev)
@@ -129,7 +129,7 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
  * the timezone is the time value offset from the local time. It's to be applied outside time2text() to get the AM/PM right.
  */
 /proc/time_to_twelve_hour(time, format = "hh:mm:ss", timezone = TIMEZONE_UTC)
-	time = MODULUS(time + (timezone - GLOB.timezoneOffset) HOURS, 24 HOURS)
+	time = MODULUS(time + (timezone * (1 HOURS)), 24 HOURS)
 	var/am_pm = "AM"
 	if(time > 12 HOURS)
 		am_pm = "PM"

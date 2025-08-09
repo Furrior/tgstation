@@ -141,7 +141,7 @@
 	to_chat(human_occupant, span_danger("As [src] whirrs to life you feel some cold metal restraints deploy around you, you can't move!"))
 	playsound(loc, 'sound/items/tools/rped.ogg', 60)
 	say("Stage one complete!")
-	minor_announce("SECURITY BREACH DETECTED, NETWORK COMPROMISED! LOCATION UNTRACEABLE.", "GoldenEye Defence Network")
+	minor_announce("ОБНАРУЖЕНО НАРУШЕНИЕ БЕЗОПАСНОСТИ, СЕТЬ КОМПРОМИСТОВАНА! МЕСТОПОЛОЖЕНИЕ НЕ МОЖЕТ БЫТЬ ОТСЛЕЖЕНО.", "Сеть защиты GoldenEye")
 	timer_id = addtimer(CALLBACK(src, PROC_REF(stage_two)), rand(STAGE_PROCESS_TIME_LOWER, STAGE_PROCESS_TIME_UPPER), TIMER_STOPPABLE|TIMER_UNIQUE)
 
 /obj/machinery/interrogator/proc/stage_two()
@@ -177,7 +177,7 @@
 	addtimer(CALLBACK(src, PROC_REF(announce_creation)), ALERT_CREW_TIME)
 
 /obj/machinery/interrogator/proc/announce_creation()
-	priority_announce("CRITICAL SECURITY BREACH DETECTED! A GoldenEye authentication keycard has been illegally extracted and is being sent in somewhere on the station!", "GoldenEye Defence Network")
+	priority_announce("ОБНАРУЖЕНО КРИТИЧЕСКОЕ НАРУШЕНИЕ БЕЗОПАСНОСТИ! Ключ-карта аутентификации GoldenEye была незаконно извлечена и отправлена куда-то на станцию!", "Сеть защиты GoldenEye")
 	for(var/obj/item/pinpointer/nuke/disk_pinpointers in GLOB.pinpointer_list)
 		disk_pinpointers.switch_mode_to(TRACK_GOLDENEYE) //Pinpointer will track the newly created goldeneye key.
 

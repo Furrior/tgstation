@@ -7,6 +7,7 @@
 	worn_icon = 'modular_zzz/icons/mob/clothing/heads.dmi'
 	icon_state = "mark45_helmet"
 	inhand_icon_state = "mark45_helmet"
+	base_icon_state = "mark45_helmet"
 	lefthand_file = 'modular_zzz/icons/mob/clothing/lefthand.dmi'
 	righthand_file = 'modular_zzz/icons/mob/clothing/righthand.dmi'
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR
@@ -16,6 +17,7 @@
 	name = "Mk. 45 Desert Hunter helmet"
 	desc = "A modified helmet commonly used by desert Catcrins. Among the most noticeable differences is a layer of fabric designed to minimize the wear-and-tear caused by sandstorms, prolonging its lifespan in desert environments.  The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
 	icon_state = "mark45_helmet_desert"
+	base_icon_state = "mark45_helmet_desert"
 	inhand_icon_state = "mark45_helmet_desert"
 	unique_reskin = null
 
@@ -23,6 +25,7 @@
 	name = "Mk. 45 Anomalist helmet"
 	desc = "Helmet of the anomalist of the Catcrin army with additional decoration in the form of light armored fabric on it. It also provides protection from small shrapnel and shows the status of the wearer. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
 	icon_state = "mark45_helmet_anomalist"
+	base_icon_state = "mark45_helmet_anomalist"
 	inhand_icon_state = "mark45_helmet_anomalist"
 	unique_reskin = null
 
@@ -30,6 +33,7 @@
 	name = "Mk. 45 Combat engineer helmet"
 	desc = "Helmet of a combat engineer of the Catcrin army with a slight tinting on the visor to protect the eyes while working. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
 	icon_state = "mark45_helmet_combatengineer"
+	base_icon_state = "mark45_helmet_combatengineer"
 	inhand_icon_state = "mark45_helmet_combatengineer"
 	unique_reskin = null
 
@@ -37,6 +41,7 @@
 	name = "Mk. 45 Support helmet"
 	desc = "Helmet of a Catcrin army support trooper with a white cross on it for identification purposes. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
 	icon_state = "mark45_helmet_support"
+	base_icon_state = "mark45_helmet_support"
 	inhand_icon_state = "mark45_helmet_support"
 	unique_reskin = null
 
@@ -44,6 +49,7 @@
 	name = "Mk. 45 Snow Cover helmet"
 	desc = "A modified Catcrin helmet optimized for cold-weather operations, differing wildly in appearance from its original form. An additional light plate is attached to the top of the helmet to deflect snow, and the visor itself has been made smaller. The inside of the helmet is lined with wool, with only the ears having been left unaffected. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
 	icon_state = "mark45_helmet_snow"
+	base_icon_state = "mark45_helmet_snow"
 	inhand_icon_state = "mark45_helmet_snow"
 	unique_reskin = null
 
@@ -232,3 +238,28 @@
 	name = "AC Casual Skirt"
 	desc= "Casual skirt for special operations for Mercenaries in Adamas Cattus."
 	icon_state = "ac_uni_skirt"
+
+/obj/item/clothing/under/catcrin_underarmor
+	name = "Catcrin underarmor unifrom"
+	desc= "A uniform originally created for the Catcrin combat synthetics, but later adopted by the masses due to its strange popularity. Give you no tactical advantage whatsoever."
+	icon = 'modular_zzz/icons/obj/clothing/under.dmi'
+	worn_icon = 'modular_zzz/icons/mob/clothing/under.dmi'
+	worn_icon_digi = 'modular_zzz/icons/mob/clothing/under.dmi'
+	icon_state = "catcrin_underarmor"
+	can_adjust = FALSE
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	uses_advanced_reskins = TRUE
+	unique_reskin = list(
+		"Black" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor"
+		),
+		"White" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor_white",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor_white"
+		),
+		"Beige" = list(
+			RESKIN_ICON_STATE = "catcrin_underarmor_beige",
+			RESKIN_WORN_ICON_STATE = "catcrin_underarmor_beige"
+		)
+	)

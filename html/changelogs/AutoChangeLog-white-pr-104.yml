@@ -1,0 +1,6 @@
+author: "SmiLeYre"
+delete-after: True
+changes:
+  - rscdel: "Удалил прыжки."
+  - qol: "Улучшил эмоутовые прыжки."
+  - balance: "Улучшил слаймов."
