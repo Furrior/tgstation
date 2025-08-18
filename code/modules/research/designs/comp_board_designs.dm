@@ -56,7 +56,7 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
 
-/datum/design/board/aiupload
+/*/datum/design/board/aiupload // ! WHITEMOON. Убрал возможность печатать платы смены законов, чтобы антагонисты не просто распечатали и пошли законы менять, а крали плату из хранилища.
 	name = "AI Upload Board"
 	desc = "Allows for the construction of circuit boards used to build an AI Upload Console."
 	id = "aiupload"
@@ -76,7 +76,7 @@
 	category = list(
 		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_ROBOTICS
 	)
-	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE
+	departmental_flags = DEPARTMENT_BITFLAG_SCIENCE*/
 
 /datum/design/board/med_data
 	name = "Medical Records Board"
@@ -411,3 +411,13 @@
 	desc = "Allows for the construction of circuit boards used to build a console that enables the targetting of custom flight locations"
 	id = "shuttle_docker"
 	build_path = /obj/item/circuitboard/computer/shuttle/docker
+
+/datum/design/board/quantum_console
+	name = "Quantum Console Board"
+	desc = "Allows for the construction of circuit boards used to build a Quantum Console."
+	id = "quantum_console"
+	build_path = /obj/item/circuitboard/computer/quantum_console
+	category = list(
+		RND_CATEGORY_COMPUTER + RND_SUBCATEGORY_COMPUTER_CARGO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING

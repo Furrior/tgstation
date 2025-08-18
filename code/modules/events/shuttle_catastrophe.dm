@@ -35,7 +35,7 @@
 			message += " Вы получили бонус от [command_name()] за разумные траты."
 	else
 		message += "До дальнейшего уведомления вашим запасным шаттлом будет [new_shuttle.name]."
-	priority_announce(message, "Кораблестроение Центрального Командования")
+	priority_announce(message, "Диспетчерская Служба")
 
 /datum/round_event/shuttle_catastrophe/setup()
 	if(SSshuttle.shuttle_insurance || !isnull(new_shuttle)) //If an admin has overridden it don't re-roll it

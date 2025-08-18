@@ -374,7 +374,7 @@
 	priority_announce(
 		text = "Мы наблюдаем призыв Сверх-Существа со стороны [cultist.real_name] на территории [summon_location.get_original_area_name()] из Красного Измерения. Остановите ритуал любой ценой!",
 		sound = cult_music_played ? 'sound/announcer/notice/notice3.ogg' : 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
-		sender_override = "[command_name()]: Комитет O-5",
+		sender_override = "Комитет O-5",
 		has_important_message = TRUE,
 	)
 	cult_music_played = TRUE

@@ -23,3 +23,6 @@
 	threshold_major = 3000
 	threshold_crewset = 3000
 	threshold_ghostset = 3000
+
+/datum/storyteller/medium/opfor
+	votable = FALSE

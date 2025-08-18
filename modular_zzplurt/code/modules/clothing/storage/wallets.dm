@@ -6,32 +6,32 @@
 	worn_icon_state = "nothing" // Sorry for that
 	icon_state = "tailbag"
 
-// /obj/item/storage/wallet/tailbag/refreshID()
-// 	LAZYCLEARLIST(combined_access)
+/obj/item/storage/wallet/tailbag/refreshID()
+	LAZYCLEARLIST(combined_access)
 
-// 	var/winning_tally = 0
-// 	var/is_magnetic_found = FALSE
-// 	for(var/obj/item/card/id/id_card in contents)
-// 		// Certain IDs can forcibly jump to the front so they can disguise other cards in wallets. Chameleon/Agent ID cards are an example of this.
-// 		if(!is_magnetic_found && HAS_TRAIT(id_card, TRAIT_MAGNETIC_ID_CARD))
-// 			is_magnetic_found = TRUE
+	var/winning_tally = 0
+	var/is_magnetic_found = FALSE
+	for(var/obj/item/card/id/id_card in contents)
+		// Certain IDs can forcibly jump to the front so they can disguise other cards in wallets. Chameleon/Agent ID cards are an example of this.
+		if(!is_magnetic_found && HAS_TRAIT(id_card, TRAIT_MAGNETIC_ID_CARD))
+			is_magnetic_found = TRUE
 
-// 		if(!is_magnetic_found)
-// 			var/card_tally = SSid_access.tally_access(id_card, ACCESS_FLAG_COMMAND)
-// 			if(card_tally > winning_tally)
-// 				winning_tally = card_tally
+		if(!is_magnetic_found)
+			var/card_tally = SSid_access.tally_access(id_card, ACCESS_FLAG_COMMAND)
+			if(card_tally > winning_tally)
+				winning_tally = card_tally
 
-// 		LAZYINITLIST(combined_access)
-// 		combined_access |= id_card.access
+		LAZYINITLIST(combined_access)
+		combined_access |= id_card.access
 
-// 	if(ishuman(loc))
-// 		var/mob/living/carbon/human/wearing_human = loc
-// 		if(wearing_human.wear_id == src)
-// 			wearing_human.sec_hud_set_ID()
+	if(ishuman(loc))
+		var/mob/living/carbon/human/wearing_human = loc
+		if(wearing_human.wear_id == src)
+			wearing_human.update_ID_card()
 
-// 	update_label()
-// 	update_appearance(UPDATE_ICON)
-// 	update_slot_icon()
+	update_label()
+	update_appearance(UPDATE_ICON)
+	update_slot_icon()
 
 
 // /obj/item/storage/wallet/tailbag/Initialize(mapload)

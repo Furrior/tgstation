@@ -16,17 +16,27 @@
 /datum/supply_pack/security/armory/renoster // 1200 за один реностер. 2400 за два.
 	cost = PAYCHECK_COMMAND * 24
 
-/datum/supply_pack/security/armory/sindano // ВТшка со Скуратов, но в два раза лучше. Каждая за 3000. Патроны по 500. Выше среднего.
-	cost = PAYCHECK_COMMAND * 105
+/datum/supply_pack/security/armory/sindano // ВТшка со Скуратов, но в два раза лучше. Каждая за 800. Патроны по 100. Выше среднего.
+	cost = PAYCHECK_COMMAND * 30
+
+/datum/supply_pack/security/armory/sindano_ammo
+	name = "Carwo 'Sindano' Submachinegun Ammo Crate"
+	desc = "Contains 5 extended magazines with lethal regular rounds for the Carwo 'Sindano' Submachinegun."
+	cost = PAYCHECK_COMMAND * 5
+	contains = list(/obj/item/ammo_box/magazine/c35sol_pistol/stendo = 5)
+	crate_name = "Carwo 'Sindano' Submachinegun magazine crate"
+
+/datum/supply_pack/security/armory/sindano_ammo_rubber // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
+
+/datum/supply_pack/security/armory/sindano_ammo_regular // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
+
+/datum/supply_pack/security/armory/sindano_ammo_flat // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
 /datum/supply_pack/security/armory/dragnet // Стандартная цена.
 	cost = PAYCHECK_COMMAND * 36
-
-/datum/supply_pack/security/armory/disabler_smg // Три Дизаблер-СМГ.
-	cost = PAYCHECK_COMMAND * 12
-
-/datum/supply_pack/security/armory/energy // Один еган - 1200. Два егана - 2400.
-	cost = PAYCHECK_COMMAND * 24
 
 /datum/supply_pack/security/armory/kiboko // Ставлю стандартную цену.
 	cost = PAYCHECK_COMMAND * 60
@@ -65,14 +75,50 @@
 /datum/supply_pack/security/armory/cmg // Средний класс автоматических винтовок. Хуже Синдано. Две штуки. Каждая за 4000.
 	cost = PAYCHECK_COMMAND * 80
 
-/datum/supply_pack/security/armory/wt551 // Две рядовые автоматические винтовки. Каждая за 2000.
-	cost = PAYCHECK_COMMAND * 40
+/datum/supply_pack/security/armory/wt551 // Две рядовые автоматические винтовки. Каждая за 1500.
+	cost = PAYCHECK_COMMAND * 30
 
-/datum/supply_pack/security/armory/wt550_ammo_rubber // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_rubber // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
-/datum/supply_pack/security/armory/wt550_ammo_regular // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_regular // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
 
-/datum/supply_pack/security/armory/wt550_ammo_flat // Патроны на автоматическую винтовку стоят 1000.
-	cost = PAYCHECK_COMMAND * 10
+/datum/supply_pack/security/armory/wt550_ammo_flat // Патроны на автоматическую винтовку стоят 500.
+	cost = PAYCHECK_COMMAND * 5
+
+/datum/supply_pack/security/armory/wespe // 1200 кредитов за каждый набор оружия, их тут три.
+	name = "Wespe Three-Pack Crates"
+	desc = "Contains three case of the .35 sol handgun, magazines included."
+	cost = PAYCHECK_COMMAND * 36
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/sol = 3,
+		/obj/item/ammo_box/magazine/c35sol_pistol = 3,
+		/obj/item/ammo_box/c35sol/incapacitator = 3,
+		)
+	crate_name = "wespe pistols crate"
+
+/datum/supply_pack/security/armory/miecz // Двенадцать выстрелов на хардкрит без учёта брони. Достаточно дешёвое огнестрельное оружие за 1600.
+	name = "Miecz Submachine Gun Single-Pack"
+	crate_name = "Miecz submachinegun crate"
+	desc = "Contains a Miecz submachinegun and a spare magazine for it."
+	contains = list(/obj/item/gun/ballistic/automatic/miecz = 1,
+	/obj/item/ammo_box/magazine/miecz = 1)
+	cost = PAYCHECK_COMMAND * 16
+	access = ACCESS_SECURITY
+
+/datum/supply_pack/security/armory/laser // 500 кредитов за одну единицу летального лазгана.
+	name = "Lasers Crate"
+	desc = "Contains three lethal, high-energy laser guns."
+	cost = PAYCHECK_COMMAND * 15
+	access_view = ACCESS_ARMORY
+	contains = list(/obj/item/gun/energy/laser = 3)
+	crate_name = "laser crate"
+
+/datum/supply_pack/security/armory/eland // 1200 кредитов за каждый набор оружия, их тут три.
+	name = "Eland Three-Pack Crates"
+	desc = "Contains three case of the .35 sol revolver, munition boxes included."
+	cost = PAYCHECK_COMMAND * 36
+	contains = list(/obj/item/gun/ballistic/revolver/sol = 3,
+		/obj/item/ammo_box/c35sol/incapacitator = 3,
+		)
+	crate_name = "eland pistols crate"

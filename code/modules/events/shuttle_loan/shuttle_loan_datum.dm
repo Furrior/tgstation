@@ -26,7 +26,7 @@
 	CRASH("Unimplemented get_spawned_items() on [src.type].")
 
 /datum/shuttle_loan_situation/antidote
-	sender = "Стартапы Центрального Командования"
+	sender = "Стартапы"
 	announcement_text = "Снабжение: Ваша станция была выбрана для эпидемиологического исследовательского проекта. Отправьте нам ваш грузовой шаттл для получения образцов для исследования."
 	shuttle_transit_text = "Снабжение: Прибывают образцы Вирусов."
 	logging_desc = "Virus shuttle"
@@ -51,7 +51,7 @@
 	spawn_list.Add(/obj/item/reagent_containers/cup/bottle/magnitis)
 
 /datum/shuttle_loan_situation/department_resupply
-	sender = "Снабжение Центрального Командования"
+	sender = "Снабжение"
 	announcement_text = "Снабжение: Похоже, в этом месяце мы заказали в два раза больше посылок для пополнения запасов наших отделов. Мы можем отправить их к вам?"
 	shuttle_transit_text = "Снабжение: Прибывают запасы для отделов."
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут."
@@ -79,7 +79,7 @@
 		new decal(pick_n_take(empty_shuttle_turfs))
 
 /datum/shuttle_loan_situation/syndiehijacking
-	sender = "Контрразведка Центрального Командования"
+	sender = "Контрразведка"
 	announcement_text = "Снабжение: Террористы из группировки Мародёров Горлексов пытаются проникнуть на объекты Nanotrasen. Если вы позволите им угнать ваш грузовой шаттл, вы избавите нас от головной боли."
 	shuttle_transit_text = "Снабжение: Прибывает команда захвата Синдиката."
 	logging_desc = "Syndicate boarding party"
@@ -96,7 +96,7 @@
 		spawn_list.Add(/mob/living/basic/trooper/syndicate/ranged/infiltrator)
 
 /datum/shuttle_loan_situation/lots_of_bees
-	sender = "Подразделение Уборщиков Центрального Командования"
+	sender = "Подразделение Уборщиков"
 	announcement_text = "Снабжение: Один из наших грузовых кораблей с пчёлами подвергся нападению со стороны эко-террористов. Можете убрать там всё за нас?"
 	shuttle_transit_text = "Снабжение: Биологическая опасность летит на вашу станцию."
 	bonus_points = CARGO_CRATE_VALUE * 100 //Toxin bees can be unbeelievably lethal
@@ -131,7 +131,7 @@
 		new casing(pick_n_take(empty_shuttle_turfs))
 
 /datum/shuttle_loan_situation/jc_a_bomb
-	sender = "КСБ Центрального Командования"
+	sender = "Корпоративная Служба Безопасности"
 	announcement_text = "Снабжение: Мы обнаружили действующую Бомбу Синдиката рядом с топливными линиями нашего VIP-шаттла и по нашим данным её установили террористы из группировки Мародёров Горлекса. Если вы чувствуете, что справитесь с этой задачей, мы заплатим вам за ее разрядку."
 	shuttle_transit_text = "Снабжение: Поступает взрывоопасный боеприпас, начинённый взрывчаткой. Будьте предельно осторожны."
 	thanks_msg = "На шаттл прибывает взрывоопасный боеприпас. Рекомендуется эвакуировать грузовой отсек."
@@ -146,7 +146,7 @@
 		spawn_list.Add(/obj/item/paper/fluff/cargo/bomb/allyourbase)
 
 /datum/shuttle_loan_situation/papers_please
-	sender = "ФМС Центрального Командования"
+	sender = "Миграционная Служба"
 	announcement_text = "Снабжение: Соседней станции нужна помощь в оформлении документов. Не могли бы вы помочь с оформлением?"
 	shuttle_transit_text = "Снабжение: Прибывают неподписанные документы."
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут. Оплата будет произведена после оформления и возвращения документов."
@@ -157,7 +157,7 @@
 	spawn_list += subtypesof(/obj/item/paperwork) - typesof(/obj/item/paperwork/photocopy) - typesof(/obj/item/paperwork/ancient)
 
 /datum/shuttle_loan_situation/pizza_delivery
-	sender = "Отдел Космопиццы Центрального Командования"
+	sender = "Отдел Космопиццы"
 	announcement_text = "Снабжение: Похоже, соседняя станция случайно доставила вам пиццу."
 	shuttle_transit_text = "Снабжение: Доставка пиццы!"
 	thanks_msg = "Грузовой шаттл должен вернуться через пять минут."
@@ -171,7 +171,7 @@
 		spawn_list.Add(pick(prob(5) ? naughtypizza : nicepizza))
 
 /datum/shuttle_loan_situation/russian_party
-	sender = "ФМС Центрального Командования"
+	sender = "Миграционная Служба"
 	announcement_text = "Снабжение: Группа злых коммунистов, ренегатов НРИ, хочет устроить вечеринку. Можете отправить им ваш грузовой шаттл, чтобы заставить их исчезнуть?"
 	shuttle_transit_text = "Снабжение: Прибывают весёлые русские."
 	logging_desc = "Russian party squad"
@@ -189,7 +189,7 @@
 		spawn_list.Add(/mob/living/basic/bear/russian)
 
 /datum/shuttle_loan_situation/spider_gift
-	sender = "Дипломатический Корпус Центрального Командования"
+	sender = "Дипломатический Корпус"
 	announcement_text = "Снабжение: Клан Пауков прислал нам таинственный подарок. Мы можем отправить его вам, чтобы вы посмотрели, что внутри?"
 	shuttle_transit_text = "Снабжение: Прибывает подарок от клана Пауков."
 	logging_desc = "Shuttle full of spiders"
@@ -227,7 +227,7 @@
  * It sends back a lot of mail to the station, at the cost of wrecking the cargo shuttle a little.
  */
 /datum/shuttle_loan_situation/mail_strike
-	sender = "Дипломатический Корпус Центрального Командования"
+	sender = "Дипломатический Корпус"
 	announcement_text = "Снабжение: Профсоюз работников почты хочет одолжить ваш грузовой шаттл, чтобы применить на нем \"передовую тактику профсоюзных забастовок\". Оплата строго почтой."
 	bonus_points = 0
 	thanks_msg = "Снабжение: Грузовой шаттл должен вернуться через пять минут."

@@ -22,3 +22,6 @@
 	threshold_major = 2500
 	threshold_crewset = 2000
 	threshold_ghostset = 2000
+
+/datum/storyteller/high/opfor
+	votable = FALSE

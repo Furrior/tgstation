@@ -3313,6 +3313,13 @@
 "azF" = (
 /turf/open/floor/iron/stairs/medium,
 /area/station/command/gateway)
+"azH" = (
+/obj/docking_port/stationary/random{
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
+	},
+/turf/open/space/basic,
+/area/space)
 "azK" = (
 /obj/structure/railing,
 /obj/structure/sign/poster/official/random/directional/north,
@@ -48050,6 +48057,13 @@
 	},
 /turf/open/floor/iron/dark/small,
 /area/station/engineering/atmos/project)
+"heV" = (
+/obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
+	dir = 1
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "heW" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -53182,6 +53196,11 @@
 	dir = 4
 	},
 /area/station/commons/dorms)
+"hRD" = (
+/obj/machinery/atmospherics/pipe/smart/simple/cyan/visible,
+/obj/structure/lattice/catwalk,
+/turf/open/space/basic,
+/area/space/nearstation)
 "hRI" = (
 /obj/effect/turf_decal/siding{
 	dir = 10
@@ -56282,6 +56301,10 @@
 	},
 /turf/open/floor/wood/large,
 /area/station/commons/dorms)
+"ipM" = (
+/obj/item/staff,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/fore)
 "ipO" = (
 /obj/machinery/newscaster/directional/west,
 /obj/machinery/light/directional/west,
@@ -66202,13 +66225,6 @@
 	dir = 1
 	},
 /area/station/security/brig)
-"jOS" = (
-/obj/docking_port/stationary/random{
-	name = "lavaland";
-	shuttle_id = "pod_2_lavaland"
-	},
-/turf/open/space,
-/area/space)
 "jPa" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/trimline/red/filled/line,
@@ -88024,11 +88040,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"nea" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/marker_beacon/lime,
-/turf/open/space,
-/area/space/nearstation)
 "ned" = (
 /obj/structure/window/reinforced/spawner/directional/north,
 /obj/structure/window/reinforced/spawner/directional/south,
@@ -98836,13 +98847,6 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/hallway/primary/central)
-"oJs" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/visible{
-	dir = 1
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/space/nearstation)
 "oJw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
@@ -102375,11 +102379,6 @@
 /obj/effect/turf_decal/trimline/dark/corner,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom/holding)
-"pgI" = (
-/obj/machinery/atmospherics/pipe/smart/simple/cyan/visible,
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/space/nearstation)
 "pgL" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
@@ -120500,10 +120499,6 @@
 	},
 /turf/open/floor/circuit/telecomms/server,
 /area/station/science/server)
-"rQa" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/space/nearstation)
 "rQb" = (
 /obj/structure/table/reinforced/plastitaniumglass,
 /turf/open/floor/iron/dark,
@@ -145346,11 +145341,6 @@
 /obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/supply)
-"vzP" = (
-/obj/machinery/atmospherics/pipe/smart/simple/green/visible,
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/space/nearstation)
 "vzQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -159525,13 +159515,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/engine/hull/reinforced,
 /area/space/nearstation)
-"xKJ" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/turf/open/space,
-/area/space/nearstation)
 "xKK" = (
 /obj/machinery/computer/teleporter,
 /obj/machinery/firealarm/directional/west,
@@ -162175,10 +162158,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/fore/lesser)
-"yfC" = (
-/obj/item/staff,
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/fore)
 "yfE" = (
 /obj/effect/turf_decal/siding/thinplating_new/dark,
 /obj/effect/turf_decal/trimline/dark/line,
@@ -180751,7 +180730,7 @@ gym
 gym
 gym
 gym
-nea
+cJz
 gJT
 xzb
 ejn
@@ -181265,7 +181244,7 @@ gym
 gym
 gym
 gym
-jOS
+azH
 gym
 gym
 gym
@@ -181779,7 +181758,7 @@ gym
 gym
 gym
 gym
-nea
+cJz
 gJT
 xzb
 ejn
@@ -182293,7 +182272,7 @@ gym
 gym
 gym
 gym
-jOS
+azH
 gym
 gym
 gym
@@ -182807,7 +182786,7 @@ gym
 gym
 gym
 gym
-nea
+cJz
 gJT
 xzb
 ejn
@@ -183321,7 +183300,7 @@ gym
 gym
 gym
 gym
-jOS
+azH
 gym
 gym
 gym
@@ -183835,7 +183814,7 @@ gym
 gym
 gym
 gym
-nea
+cJz
 gJT
 xzb
 ejn
@@ -198066,13 +198045,13 @@ gih
 emX
 upO
 mSY
-xKJ
+acT
 trC
 trC
 trC
 trC
 trC
-rQa
+gJT
 ihJ
 gym
 gJT
@@ -198323,13 +198302,13 @@ xyz
 mYR
 cKX
 aVG
-vzP
+sXb
 tbk
 qGg
 oxC
 oxC
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -198580,13 +198559,13 @@ jVY
 bSb
 jct
 jvZ
-rQa
+gJT
 cYz
 eBC
 sof
 wDA
 trC
-rQa
+gJT
 ihJ
 ykP
 dew
@@ -198837,13 +198816,13 @@ uia
 kLK
 uGn
 gWV
-oJs
+heV
 hsB
 mHk
 qOc
 oxC
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -199094,7 +199073,7 @@ aYL
 cWS
 oUY
 kpN
-rQa
+gJT
 trC
 trC
 trC
@@ -199351,13 +199330,13 @@ ykv
 bKG
 iKr
 aVG
-vzP
+sXb
 tbk
 mrN
 fsx
 fsx
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -199608,13 +199587,13 @@ jSo
 eMn
 dmH
 jvZ
-rQa
+gJT
 cYz
 nrh
 wJx
 paH
 trC
-rQa
+gJT
 ihJ
 ykP
 dew
@@ -199865,13 +199844,13 @@ wWM
 uCs
 rgl
 gWV
-oJs
+heV
 hsB
 eNX
 bLG
 fsx
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -200122,7 +200101,7 @@ uLW
 tYl
 oUY
 kpN
-rQa
+gJT
 trC
 trC
 trC
@@ -200379,13 +200358,13 @@ dxX
 stp
 xzd
 cvt
-pgI
+hRD
 sdW
 gGE
 uCR
 uCR
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -200636,13 +200615,13 @@ rZX
 aab
 dmH
 jvZ
-rQa
+gJT
 cYz
 fEq
 kOH
 acG
 trC
-rQa
+gJT
 ihJ
 ykP
 dew
@@ -200893,13 +200872,13 @@ dAh
 maN
 lQm
 cvt
-pgI
+hRD
 gim
 ocT
 gKt
 uCR
 trC
-rQa
+gJT
 dew
 gJT
 dew
@@ -201150,13 +201129,13 @@ cDb
 sBP
 eTX
 iwh
-rQa
+gJT
 trC
 trC
 trC
 trC
 trC
-rQa
+gJT
 ihJ
 gym
 gJT
@@ -201407,11 +201386,11 @@ lmu
 yjn
 caH
 iwh
-rQa
-ykP
-rQa
 gJT
-rQa
+ykP
+gJT
+gJT
+gJT
 ykP
 gJT
 gJT
@@ -271762,7 +271741,7 @@ lIL
 viu
 rPm
 mrt
-yfC
+ipM
 xGM
 pNP
 qTi

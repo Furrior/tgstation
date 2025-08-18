@@ -95,7 +95,7 @@
 
 	priority_announce(
 		text = "Мы наблюдаем призыв Сверх-Существа со стороны [totally_real_cult_leader.real_name] на территории [fake_summon_area] из Красного Измерения. Остановите ритуал любой ценой!",
-		title = "[command_name()]: Комитет O-5",
+		title = "Комитет O-5",
 		sound = 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,
 		players = list(hallucinator),

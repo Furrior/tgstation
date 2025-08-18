@@ -198,12 +198,12 @@
 	H.blooper_speed = 8
 	H.blooper_pitch = 0.6
 	H.blooper_pitch_range = 0.3
-	H.dna.update_ui_block(DNA_GENDER_BLOCK)
-	H.dna.update_ui_block(DNA_SKIN_TONE_BLOCK)
-	H.dna.update_ui_block(DNA_HAIRSTYLE_BLOCK)
-	H.dna.update_ui_block(DNA_HAIR_COLOR_BLOCK)
-	H.dna.update_ui_block(DNA_FACIAL_HAIRSTYLE_BLOCK)
-	H.dna.update_ui_block(DNA_FACIAL_HAIR_COLOR_BLOCK)
+	H.dna.update_ui_block(/datum/dna_block/identity/gender)
+	H.dna.update_ui_block(/datum/dna_block/identity/skin_tone)
+	H.dna.update_ui_block(/datum/dna_block/identity/hair_style)
+	H.dna.update_ui_block(/datum/dna_block/identity/hair_color)
+	H.dna.update_ui_block(/datum/dna_block/identity/facial_style)
+	H.dna.update_ui_block(/datum/dna_block/identity/facial_color)
 	H.update_body(TRUE)
 	H.update_hair()
 

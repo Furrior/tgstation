@@ -184,7 +184,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	player.put_in_hands(new random_path())
 
 /datum/anonymous_theme/wizards/announce_to_all_players()
-	priority_announce("Your station has been caught by a Wizard Federation Memetic Hazard. You are not y0urself, and yo% a2E 34!NOT4--- Welcome to the Academy, apprentices!", "Memetic Hazard", SSstation.announcer.get_rand_alert_sound())
+	priority_announce("Ваша станция подверглась меметической опасности Федерации Волшебников. Вы не в себе, и вы% a2E 34!NOT4?--- <...> Добро пожаловать в Академию, ученики!", "Меметическая Угроза", SSstation.announcer.get_rand_alert_sound())
 
 /datum/anonymous_theme/wizards/anonymous_name(mob/target)
 	var/wizard_name_first = pick(GLOB.wizard_first)
@@ -220,7 +220,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	set_station_name("[pick(GLOB.first_names)] [pick(GLOB.last_names)]")
 
 /datum/anonymous_theme/station/announce_to_all_players()
-	priority_announce("Confirmed level 9 reality error event near [station_name()]. All personnel must try their best to carry on, as to not trigger more reality events by accident.", "Central Command: Комитет O-5", 'sound/announcer/notice/notice1.ogg')
+	priority_announce("Подтверждено событие ошибки реальности Девятого Уровня рядом с [station_name()]. Весь персонал должен приложить все усилия, чтобы не спровоцировать случайные повторения событий в реальности.", "Комитет O-5", 'sound/announcer/notice/notice1.ogg')
 
 /datum/anonymous_theme/station/anonymous_name(mob/target)
 	return new_station_name()

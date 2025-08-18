@@ -625,7 +625,7 @@
 	log_transport("TC: [specific_transport_id] ending Tram Malfunction event.")
 
 /datum/transport_controller/linear/tram/proc/announce_malf_event()
-	priority_announce("Our automated control system has lost contact with the tram's onboard computer. Please stand by, engineering has been dispatched to the tram to perform a reset.", "[command_name()] Engineering Division")
+	priority_announce("Наша автоматизированная система управления потеряла связь с бортовым компьютером трамвая. Пожалуйста, подождите, к трамваю отправлены инженеры для сброса настроек.", "Инженерная Служба")
 
 /datum/transport_controller/linear/tram/proc/register_collision(points = 1)
 	tram_registration.collisions += points
@@ -735,9 +735,9 @@
 	// Don't bother processing crossing signals, where this tram's going there are no signals
 	//for(var/obj/machinery/transport/crossing_signal/xing as anything in SStransport.crossing_signals)
 	//	xing.temp_malfunction()
-	priority_announce("In a turn of rather peculiar events, it appears that [GLOB.station_name] has struck an immovable rod. (Don't ask us where it came from.) This has led to a station brakes failure on one of the tram platforms.\n\n\
-		Our diligent team of engineers have been informed and they're rushing over - although not quite at the speed of our recently flying tram.\n\n\
-		So while we all look in awe at the universe's mysterious sense of humour, please stand clear of the tracks and remember to stand behind the yellow line.", "Braking News")
+	priority_announce("В череде довольно странных событий выясняется, что [GLOB.station_name] пролетела через неподвижный стержень. (Не спрашивайте нас, откуда он взялся.) Это привело к отказу тормозов на одной из трамвайных платформ.\n\n\
+		Наша трудолюбивая команда инженеров проинформирована и уже спешит на помощь - хотя и не со скоростью нашего недавно вылетевшего с рельс трамвая.\n\n\
+		Потому, пока мы все с благоговением взираем на загадочное чувство юмора Вселенной, пожалуйста, отойдите от путей и не забудьте встать за желтую линию.", "Шокирующие Новости")
 	set_active(TRUE)
 	set_status_code(CONTROLS_LOCKED, TRUE)
 	dispatch_transport(destination_platform = push_destination)

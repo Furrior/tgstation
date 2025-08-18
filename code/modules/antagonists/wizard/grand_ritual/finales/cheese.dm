@@ -10,7 +10,7 @@
 
 /datum/grand_finale/cheese/trigger(mob/living/invoker)
 	message_admins("[key_name(invoker)] has summoned forth The Wabbajack and cursed the crew with madness!")
-	priority_announce("Опасно: На станцию вызван чрезвычайно мощный объект, изменяющий реальность. Рекомендуется немедленная эвакуация. Приготовьтесь к удару.", "[command_name()]: Комитет O-5", 'sound/effects/glass/glassbr1.ogg')
+	priority_announce("Опасно: На станцию вызван чрезвычайно мощный объект, изменяющий реальность. Рекомендуется немедленная эвакуация. Приготовьтесь к удару.", "Комитет O-5", 'sound/effects/glass/glassbr1.ogg')
 
 	for (var/mob/living/carbon/human/crewmate as anything in GLOB.human_list)
 		if (isnull(crewmate.mind))
