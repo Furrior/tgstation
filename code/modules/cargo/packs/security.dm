@@ -239,14 +239,14 @@
 	)
 	crate_name = "\improper DRAGnet crate"
 
-// /datum/supply_pack/security/armory/energy
-// 	name = "Energy Guns Crate"
-// 	desc = "Contains two Energy Guns, capable of firing both nonlethal and lethal \
-// 		blasts of light."
-// 	cost = CARGO_CRATE_VALUE * 18
-// 	contains = list(/obj/item/gun/energy/e_gun = 2)
-// 	crate_name = "energy gun crate"
-// 	crate_type = /obj/structure/closet/crate/secure/plasma
+/* /datum/supply_pack/security/armory/energy >>> modular_zzz\code\modules\cargo\packs\security.dm
+	name = "Energy Guns Crate"
+	desc = "Contains two Energy Guns, capable of firing both nonlethal and lethal \
+		blasts of light."
+	cost = CARGO_CRATE_VALUE * 18
+	contains = list(/obj/item/gun/energy/e_gun = 2)
+	crate_name = "energy gun crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma */
 
 /datum/supply_pack/security/armory/laser_carbine
 	name = "Laser Carbine Crate"
@@ -256,7 +256,7 @@
 	crate_name = "laser carbine crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
-// /datum/supply_pack/security/armory/disabler_smg
+// /datum/supply_pack/security/armory/disabler_smg >>> modular_zzz\code\modules\cargo\packs\security.dm
 // 	name = "Disabler SMG Crate"
 // 	desc = "Contains three disabler SMGs, capable of rapidly firing weak disabler beams."
 // 	cost = CARGO_CRATE_VALUE * 7
