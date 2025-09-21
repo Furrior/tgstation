@@ -19,9 +19,6 @@
 /obj/projectile/bullet/arrow
 	speed = 2 // 1 изначально.
 
-/obj/projectile/bullet/pellet/shotgun_buckshot/magnum
-	damage = 10 // Было 15.
-
 /obj/projectile/beam/laser/plasma_glob
 	speed = 1.2 // 0.6 изначально.
 

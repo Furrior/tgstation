@@ -1,3 +1,7 @@
+<p align="center">
+<img width="539" height="200" alt="splurtlogo" src="https://github.com/user-attachments/assets/69856f7c-58db-4927-a03a-717ec2aec6d6" />
+</p>
+
 ## Whitemoon Station (SPLURT-station/Bubberstation Downstream)
 
 [![CI Suite](https://github.com/BlueMoon-Labs/WhiteMoon-Station/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/BlueMoon-Labs/WhiteMoon-Station/actions/workflows/ci_suite.yml)
