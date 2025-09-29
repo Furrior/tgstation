@@ -19,7 +19,7 @@
 	key_third_person = "tongues"
 	message = "sticks their tongue out."
 
-/datum/emote/living/tongue/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/living/tongue/run_emote(mob/user, params, type_override, intentional, message_override = null)
 	var/mob/living/carbon/human/human_user = user
 	if(istype(human_user) && !human_user.get_organ_slot(ORGAN_SLOT_TONGUE))
 		to_chat(human_user, span_warning("You don't have a tongue!"))

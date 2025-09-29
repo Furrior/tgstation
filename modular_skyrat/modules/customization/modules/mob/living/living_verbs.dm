@@ -44,7 +44,7 @@ GLOBAL_VAR_INIT(temporary_flavor_text_indicator, generate_temporary_flavor_text_
 	key = "narrate"
 	message = null
 
-/datum/emote/narrate/run_emote(mob/living/user, params, type_override = null, intentional = TRUE)
+/datum/emote/narrate/run_emote(mob/living/user, params, type_override = null, intentional = TRUE, message_override = null)
 	if(GLOB.say_disabled)	// This is here to try to identify lag problems
 		to_chat(user, span_danger("Speech is currently admin-disabled."))
 		return
