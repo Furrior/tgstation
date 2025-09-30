@@ -40,13 +40,13 @@
 #VORE_MIN_MESSAGE_LENGTH 10
 
 ## If enabled, prevents people with prey inside them from being eaten
-VORE_MATRYOSHKA_BANNED
+#VORE_MATRYOSHKA_BANNED
 
 ## If enabled, automatically disables suit sensors when prey is eaten
 VORE_DISABLES_SENSORS
 
 ## If enabled, prevents mobs in crit or death from engaging in vore
-VORE_NO_DEAD
+#VORE_NO_DEAD
 
 ## If enabled, mobs with no player cannot be pred or prey
-VORE_REQUIRES_PLAYER
+#VORE_REQUIRES_PLAYER

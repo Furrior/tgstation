@@ -25,4 +25,4 @@ HILBERTSHOTEL_ENABLED
 ## Hilbert's hotel ghost cafe restricted
 # Toggle on to disallow ghost cafe rooms from being accessed through the station and viceversa
 # Enabled by default
-HILBERTSHOTEL_GHOST_CAFE_RESTRICTED
+#HILBERTSHOTEL_GHOST_CAFE_RESTRICTED
