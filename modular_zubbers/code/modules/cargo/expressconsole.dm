@@ -39,16 +39,16 @@
 // 			"packs" = list()
 // 		)
 
-// 	for(var/armament_category as anything in SSarmaments.entries)//babe! it's 4pm, time for the company importing logic
-// 		for(var/subcategory as anything in SSarmaments.entries[armament_category][CATEGORY_ENTRY])
-// 			if(armament_category in allowed_categories)
-// 				for(var/datum/armament_entry/armament_entry as anything in SSarmaments.entries[armament_category][CATEGORY_ENTRY][subcategory])
-// 					meme_pack_data["Company Imports"]["packs"] += list(list(
-// 						"name" = "[armament_category]: [armament_entry.name]",
-// 						"cost" = armament_entry.cost,
-// 						"id" = REF(armament_entry),
-// 						"description" = armament_entry.description,
-// 					))
+	// for(var/armament_category in SSarmaments.entries)//babe! it's 4pm, time for the company importing logic
+	// 	for(var/subcategory in SSarmaments.entries[armament_category][CATEGORY_ENTRY])
+	// 		if(armament_category in allowed_categories)
+	// 			for(var/datum/armament_entry/armament_entry as anything in SSarmaments.entries[armament_category][CATEGORY_ENTRY][subcategory])
+	// 				meme_pack_data["Company Imports"]["packs"] += list(list(
+	// 					"name" = "[armament_category]: [armament_entry.name]",
+	// 					"cost" = armament_entry.cost,
+	// 					"id" = REF(armament_entry),
+	// 					"description" = armament_entry.description,
+	// 				))
 
 /obj/machinery/computer/cargo/express/interdyne/ui_act(action, params, datum/tgui/ui)
 	if(action == "add")//if we're generating a supply order
