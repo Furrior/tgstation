@@ -299,7 +299,7 @@
 	box = /obj/item/storage/box/centcom
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/mateba = 1,
-		/obj/item/ammo_box/a357 = 2,
+		// /obj/item/ammo_box/a357 = 2,
 		/obj/item/grenade/clusterbuster/clf3 = 2,
 		/obj/item/storage/medkit/tactical/premium/ert = 1,
 		/obj/item/shield/energy/advanced = 1,
