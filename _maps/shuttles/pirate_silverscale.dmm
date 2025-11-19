@@ -810,10 +810,48 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/bot,
+<<<<<<< HEAD
+/obj/item/ammo_box/speedloader/strilka310/phasic{
+	pixel_y = -5;
+	pixel_x = 5
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+/obj/item/gun/energy/modular_laser_rifle/carbine{
+	pixel_y = -7
+||||||||| 9ec10bc8996
+/obj/item/ammo_box/strilka310/phasic{
+	pixel_y = -5;
+	pixel_x = 5
+=========
+/obj/item/ammo_box/speedloader/strilka310/phasic{
+	pixel_y = -5;
+	pixel_x = 5
+>>>>>>>>> Temporary merge branch 2
+=======
+/obj/item/gun/energy/modular_laser_rifle/carbine{
+	pixel_y = -7
+>>>>>>> wm/master
+	},
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<<<< Temporary merge branch 1
+/obj/item/gun/energy/modular_laser_rifle/carbine,
+/obj/item/gun/energy/modular_laser_rifle/carbine{
+	pixel_y = 7
+||||||||| 9ec10bc8996
+/obj/item/ammo_box/strilka310/phasic{
+	pixel_x = 5
+=========
+=======
+/obj/item/gun/energy/modular_laser_rifle/carbine,
+/obj/item/gun/energy/modular_laser_rifle/carbine{
+	pixel_y = 7
+	},
 /obj/item/ammo_box/speedloader/strilka310/phasic{
 	pixel_y = -5;
 	pixel_x = 5
 	},
+>>>>>>> wm/master
 /obj/item/ammo_box/speedloader/strilka310/phasic{
 	pixel_x = 5
 	},

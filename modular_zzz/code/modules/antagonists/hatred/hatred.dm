@@ -300,7 +300,7 @@
 		SET_ATTACK_FORCE(attack_modifiers, 200)
 		// knife.attack(target, killer, modifiers, attack_modifiers)
 		knife.melee_attack_chain(killer, target, modifiers, attack_modifiers)
-		while(target.stat != DEAD && killer.CanReach(target, knife))
+		while(target.stat != DEAD && target.IsReachableBy(killer, knife))
 			if(!do_after(killer, 0.5 SECONDS, target))
 				break
 			if(!knife.melee_attack_chain(killer, target, modifiers, attack_modifiers))

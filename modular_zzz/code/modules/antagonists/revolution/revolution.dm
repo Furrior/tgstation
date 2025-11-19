@@ -3,7 +3,7 @@
 
 /datum/revolution_handler/check_rev_victory()
 	if(world.time >= 10 MINUTES)
-		accounts_to_rob = flatten_list(SSeconomy.bank_accounts_by_id)
+		accounts_to_rob = assoc_to_values(SSeconomy.bank_accounts_by_id)
 		for(var/i in accounts_to_rob)
 			var/datum/bank_account/B = i
 			if(B && B.has_money(100))

@@ -6,7 +6,7 @@ GLOBAL_PROTECT(topic_commands)
 
 SUBSYSTEM_DEF(topic)
 	name = "Topic"
-	init_stage = INITSTAGE_EARLY
+	init_stage = INITSTAGE_FIRST
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/topic/Initialize(timeofday)

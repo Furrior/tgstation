@@ -46,8 +46,6 @@
 /obj/structure/closet/crate/changeling_zombie/PopulateContents()
 	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
 	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
-	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
-	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus(src)
 	new /obj/item/reagent_containers/cup/glass/changeling_zombie_virus/empty(src)
 
 //The cure.

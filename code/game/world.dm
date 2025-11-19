@@ -262,6 +262,7 @@ GLOBAL_VAR(restart_counter)
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC	//redirect to server tools if necessary
 
+	var/static/list/req_ip_ids = list()
 	var/list/response = list()
 
 	if(length(T) > 8292)
@@ -291,6 +292,17 @@ GLOBAL_VAR(restart_counter)
 		var/list/censored_params = params.Copy()
 		censored_params["auth"] = "***[copytext(params["auth"], -4)]"
 		log_topic("\"[json_encode(censored_params)]\", from:[addr], master:[master], auth:[censored_params["auth"]], key:[key], source:[source]")
+
+	var/req_id = params["req_id"]
+	response["req_id"] = req_id
+	if(!req_ip_ids[addr])
+		req_ip_ids[addr] = list()
+	if(req_ip_ids[addr][req_id])
+		response["statuscode"] = 202
+		response["response"] = "Bad Request - Already handled"
+		return json_encode(response)
+
+	req_ip_ids[addr] += req_id
 
 	if(!source)
 		response["statuscode"] = 400
