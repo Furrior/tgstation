@@ -10,8 +10,8 @@
 /datum/hallucination/station_message/blob_alert
 
 /datum/hallucination/station_message/blob_alert/start()
-	priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", \
-		"Biohazard Alert", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
+	priority_announce("Подтверждена вспышка биологической опасности 5-го уровня на борту [station_name()]. Весь персонал должен противостоять опасности.", \
+		"ВНИМАНИЕ: Биологическая Опасность", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/shuttle_dock
@@ -33,8 +33,8 @@
 	if(!(locate(/mob/living/silicon/ai) in GLOB.silicon_mobs))
 		return FALSE
 
-	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", \
-		"Anomaly Alert", ANNOUNCER_AIMALF, players = list(hallucinator))
+	priority_announce("Во всех системах станции обнаружены вирусы. Пожалуйста, картируйте ваш ИИ, чтобы предотвратить возможный ущерб его моральному ядру.", \
+		"ВНИМАНИЕ: Аномалия", ANNOUNCER_AIMALF, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/heretic
@@ -106,7 +106,7 @@
 	random_hallucination_weight = 2
 
 /datum/hallucination/station_message/meteors/start()
-	priority_announce("Meteors have been detected on collision course with the station.", "Meteor Alert", ANNOUNCER_METEORS, players = list(hallucinator))
+	priority_announce("Наши сенсоры обнаружили метеориты, приближающиеся к вашей Космической Станции.", "ВНИМАНИЕ: МЕТЕОРЫ", ANNOUNCER_METEORS, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/supermatter_delam

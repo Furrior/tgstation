@@ -52,7 +52,7 @@
 
 
 /datum/job/captain/get_captaincy_announcement(mob/living/captain)
-	return "Captain [captain.real_name] on deck!"
+	return "На смену прибыл Капитан [captain.real_name]!"
 
 /datum/job/captain/get_radio_information()
 	. = ..()

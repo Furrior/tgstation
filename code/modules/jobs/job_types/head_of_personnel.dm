@@ -48,7 +48,7 @@
 
 
 /datum/job/head_of_personnel/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "На смену прибыл Глава Персонала, нынче выставленный на пост временного Капитана - [captain.real_name]!"
 
 /datum/job/head_of_personnel/generate_traitor_objective()
 	var/datum/objective/assassinate/captain_replacement/promotion = new()

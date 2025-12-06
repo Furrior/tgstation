@@ -16,12 +16,6 @@
 /datum/supply_pack/goody/rubberbr // Магазин с .38 калибром за 500 кредитов.
 	cost = PAYCHECK_COMMAND * 5
 
-/datum/supply_pack/goody/m1911 // Красивый и убийственный (5 выстрелов) пистолет за 3200.
-	cost = PAYCHECK_COMMAND * 32
-
-/datum/supply_pack/goody/shotgun_revolver // Одноручный комбат-дробовик. Обычный комбат-дробовик стоит 1500, этот будет стоить 2000.
-	cost = PAYCHECK_COMMAND * 20
-
 /datum/supply_pack/goody/mars_single // Убийственный (5 выстрелов) пистолет за 2400.
 	cost = PAYCHECK_COMMAND * 24
 
@@ -43,20 +37,11 @@
 /datum/supply_pack/goody/ballistic_single // Комбат-Дробовик.
 	cost = PAYCHECK_COMMAND * 15
 
-/datum/supply_pack/goody/rensoter_shotgun // По большей части респрайт стандартного дробовика.
-	cost = PAYCHECK_COMMAND * 12
+/datum/supply_pack/goody/thermal_single // Два немного ухудшенных АЕГа. Прикольные. Если ЕМАГнуть - будет ультра-мега-пушка.
+	cost = PAYCHECK_COMMAND * 30
 
-/datum/supply_pack/goody/ceremonial_rifle // Достаточно убийственная винтовка с прицелом. За один магазин кладёт трёх мартышек. Одна штука за 3200.
-	cost = PAYCHECK_COMMAND * 32
-
-/datum/supply_pack/goody/sakhno_derringer_single // Стандартный баллистический пистолетик.
-	cost = PAYCHECK_COMMAND * 12
-
-/datum/supply_pack/goody/sol_pistol_single // Меньше урона, чем у m1911, но зато шанс оторвать конечности.
-	cost = PAYCHECK_COMMAND * 36
-
-/datum/supply_pack/goody/sol_revolver_single // Меньше урона, чем у m1911, но зато шанс оторвать конечности.
-	cost = PAYCHECK_COMMAND * 36
-
-/datum/supply_pack/goody/plasma_projector  // 900 кредитов за набор оружия.
-	cost = PAYCHECK_COMMAND * 9
+/datum/supply_pack/goody/short_mod_laser // АЕГ за 5000 кредитов.
+	name = "Hoshi Modular Laser Carbine"
+	desc = "Модулярная лазерная винтовка с интегрированной автозарядкой."
+	cost = PAYCHECK_COMMAND * 50
+	contains = list(/obj/item/gun/energy/modular_laser_rifle/carbine)
