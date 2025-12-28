@@ -37,10 +37,10 @@
 
 	if(prob(30))
 		to_chat(M, span_notice("<i> ... [high_message] ... </i>"))
-		M.adjustToxLoss(-4 * REM, 0)
-		M.adjustBruteLoss(-4 * REM, 0)
-		M.adjustFireLoss(-4 * REM, 0)
-		M.adjustOxyLoss(-12 * REM, 0)
+		M.adjust_tox_loss(-4 * REM, 0)
+		M.adjust_brute_loss(-4 * REM, 0)
+		M.adjust_fire_loss(-4 * REM, 0)
+		M.adjust_oxy_loss(-12 * REM, 0)
 
 		M.adjust_jitter(rand(0,2))
 		M.adjust_dizzy(rand(0,2))
@@ -140,10 +140,10 @@
 
 	if(prob(30))
 		to_chat(M, span_notice("<i> ... [high_message] ... </i>"))
-		M.adjustToxLoss(-4 * REM, 0)
-		M.adjustBruteLoss(-4 * REM, 0)
-		M.adjustFireLoss(-4 * REM, 0)
-		M.adjustOxyLoss(-12 * REM, 0)
+		M.adjust_tox_loss(-4 * REM, 0)
+		M.adjust_brute_loss(-4 * REM, 0)
+		M.adjust_fire_loss(-4 * REM, 0)
+		M.adjust_oxy_loss(-12 * REM, 0)
 
 		M.adjust_jitter(rand(0,2))
 		M.adjust_dizzy(rand(0,2))
@@ -397,7 +397,7 @@
 			animate(src, pixel_y = 600, pixel_x = rand(-4, 4), time = 30, easing = BOUNCE_EASING)
 			if(prob(10) && AM == parent)
 				var/mob/living/carbon/human/M = AM
-				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 170)
+				M.adjust_organ_loss(ORGAN_SLOT_BRAIN, 5, 170)
 				to_chat(M, "<b>[readable_corrupted_text("ПШШШШШШШШШШШШШШШШШШШ!!!")]</b>")
 				var/sound/sound = sound('modular_zzz/sound/pshsh.ogg')
 				sound.environment = 23

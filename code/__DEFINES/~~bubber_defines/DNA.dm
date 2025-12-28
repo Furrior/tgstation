@@ -63,7 +63,7 @@
 //Defines for an accessory to be randomed
 #define ACC_RANDOM		"random"
 
-#define MAXIMUM_MARKINGS_PER_LIMB 3
+#define MAXIMUM_MARKINGS_PER_LIMB 6 // ! WHITEMOON | Игроки очень сильно попросили.
 
 #define BODY_SIZE_NORMAL 1.00
 #define BODY_SIZE_MAX 1.5

@@ -144,7 +144,7 @@ GLOBAL_VAR_INIT(is_void_already_spawned, FALSE)
 	if(iscarbon(user))
 		var/mob/living/carbon/M = user
 		M.AdjustParalyzed(60)
-		M.adjustBruteLoss(30)
+		M.adjust_brute_loss(30)
 		var/sound/sound = sound('modular_zzz/sound/void/trip_blast.wav')
 		sound.environment = 23
 		sound.volume = 200

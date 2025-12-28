@@ -114,7 +114,7 @@
 		if(istype(parent, /mob/living))
 			var/mob/living/yoinked = parent
 			yoinked.Move(get_step_towards(yoinked,user))
-			yoinked.adjustStaminaLoss(10)
+			yoinked.adjust_stamina_loss(10)
 			yoinked.visible_message(span_warning("[yoinked] подтягивается от того, что [user] тянет за [source]!"),\
 					span_userdanger("[user] резко тянет за [source], подтягивая тебя ближе!"),\
 					span_userdanger("Внезапный рывок за твою шею тянет тебя вперед!"))

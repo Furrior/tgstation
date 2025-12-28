@@ -343,7 +343,7 @@
 				if(-INFINITY to 0)
 					speaktrigger += "Я еле в сознании, помогите мне! "
 			//toxin
-			switch(humanoid.getToxLoss())
+			switch(humanoid.get_tox_loss())
 				if(10 to 30)
 					speaktrigger += "Меня немного подташнивает... "
 				if(30 to 60)
@@ -351,8 +351,8 @@
 				if(60 to INFINITY)
 					speaktrigger += "У меня раскалывается голова, и я чувствую, что меня сейчас стошнит... "
 			//oxygen
-			if (humanoid.getOxyLoss() >= 25)
-				speaktrigger += "Не могу дышать! "
+			if (humanoid.get_oxy_loss() >= 25)
+				speaktrigger += "Я не могу дышать! "
 			//deaf..?
 			if (HAS_TRAIT(humanoid, TRAIT_DEAF))//How the heck you managed to get here I have no idea, but just in case!
 				speaktrigger += "Я еле вас слышу! "

@@ -15,7 +15,7 @@
 				if(buckled_mob.has_gravity())
 					buckled_mob.visible_message(span_danger("[buckled_mob] falls to the floor!") ,\
 						span_userdanger("Falling to the floor!"))
-					buckled_mob.adjustBruteLoss(10)
+					buckled_mob.adjust_brute_loss(10)
 		var/obj/item/stack/cable_coil/C = new(get_turf(src))
 		C.amount = 25
 		qdel(src)
@@ -126,7 +126,7 @@
 				unbuckle_all_mobs(TRUE)
 				STOP_PROCESSING(SSobj, src)
 				return
-			buckled_mob.adjustOxyLoss(5)
+			buckled_mob.adjust_oxy_loss(5)
 			if(prob(40) && buckled_mob.stat == CONSCIOUS)
 				buckled_mob.emote("gasp")
 			if(prob(20))

@@ -10,9 +10,6 @@
 /datum/supply_pack/security/armory/dragnet // Стандартный инструмент. 1000 кредитов каждый.
 	cost = PAYCHECK_COMMAND * 20
 
-/datum/supply_pack/security/armory/laser_carbine // НовоТГшный скорострельных лазган. Три штуки. 600 за штуку.
-	cost = PAYCHECK_COMMAND * 18
-
 /datum/supply_pack/security/armory/battle_rifle // Две НовоТГшной винтовки. Каждая за 3000.
 	cost = PAYCHECK_COMMAND * 60
 
@@ -57,11 +54,12 @@
 	cost = PAYCHECK_COMMAND * 16
 
 /datum/supply_pack/security/armory/laser // 500 кредитов за одну единицу летального лазгана.
-	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns."
 	cost = PAYCHECK_COMMAND * 15
 	contains = list(/obj/item/gun/energy/laser = 3)
 	crate_name = "Laser Сrate"
+
+/datum/supply_pack/security/armory/laser_carbine // НовоТГшный скорострельных лазган. Три штуки. 600 за штуку.
+	cost = PAYCHECK_COMMAND * 18
 
 /datum/supply_pack/security/armory/eland // 1200 кредитов за каждый набор оружия, их тут три.
 	name = "Eland Three-Pack Crates"
