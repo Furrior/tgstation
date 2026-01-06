@@ -32,7 +32,7 @@
 		var/species_type = operative.client.prefs.read_preference(/datum/preference/choiced/species)
 		operative.set_species(species_type) //Apply the preferred species to our freshly-made body.
 
-	if(SSgamemode.storyteller.name == "Extended (Very Low Chaos)")
+	if(SSgamemode.storyteller == /datum/storyteller/extended_low_chaos)
 		Mind.add_antag_datum(/datum/antagonist/nukeop/lone/inteq)
 		print_command_report("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.")
 	else

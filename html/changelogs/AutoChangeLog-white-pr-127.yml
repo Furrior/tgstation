@@ -1,0 +1,6 @@
+author: "DuLL-FoX"
+delete-after: True
+changes:
+  - bugfix: "Исправлен эксплойт позволявший разгоняться до гиперскорости в невесомости"
+  - code_imp: "Добавлен rate limiting для drift movement"
+  - code_imp: "max_drift_force теперь корректно ограничен INERTIA_FORCE_CAP во всех местах"

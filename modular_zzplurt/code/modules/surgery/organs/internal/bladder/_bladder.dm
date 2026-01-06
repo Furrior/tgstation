@@ -138,9 +138,9 @@
 	desc = "This is where your oil comes from!" // not really
 	icon_state = "bladder-c"
 
-/obj/item/organ/bladder/cybernetic/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	if(prob(40 / severity))
-		urinate()
+// /obj/item/organ/bladder/cybernetic/emp_act(severity)
+// 	. = ..()
+// 	if(. & EMP_PROTECT_SELF)
+// 		return
+// 	if(prob(40 / severity))
+// 		urinate()

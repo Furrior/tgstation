@@ -766,6 +766,8 @@ SUBSYSTEM_DEF(gamemode)
 
 		voted_storyteller = pick_dynamic_storyteller_type_by_chaos(players)
 		log_dynamic("Dynamic storyteller type selected: [voted_storyteller]")
+	else
+		voted_storyteller = /datum/storyteller/extended_low_chaos
 
 	set_storyteller(voted_storyteller)
 	if(vote_datum)

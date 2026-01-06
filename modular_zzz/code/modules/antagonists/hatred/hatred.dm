@@ -903,7 +903,7 @@
 	midround_type = HEAVY_MIDROUND
 	pref_flag = ROLE_MASS_SHOOTER
 	ruleset_flags = RULESET_INVADER
-	weight = list(
+	weight = alist(
 		DYNAMIC_TIER_LOW = 0,
 		DYNAMIC_TIER_LOWMEDIUM = 0,
 		DYNAMIC_TIER_MEDIUMHIGH = 0,

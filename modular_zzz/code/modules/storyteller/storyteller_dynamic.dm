@@ -13,12 +13,15 @@
 			total_chaos += chaos
 
 	var/storyteller_type
-	if(total_chaos >= CONFIG_GET(number/chaos_for_a_hard_storyteller))
-		storyteller_type = /datum/storyteller/high
-	// else if(total_chaos >= CONFIG_GET(number/chaos_for_a_medium_storyteller))
-	// 	storyteller_type = /datum/storyteller/medium
+	if(length(players) >= 30)
+		if(total_chaos >= CONFIG_GET(number/chaos_for_a_hard_storyteller))
+			storyteller_type = /datum/storyteller/high
+		// else if(total_chaos >= CONFIG_GET(number/chaos_for_a_medium_storyteller))
+		// 	storyteller_type = /datum/storyteller/medium
+		else
+			storyteller_type = /datum/storyteller/medium
 	else
-		storyteller_type = /datum/storyteller/medium
+		storyteller_type = /datum/storyteller/low
 
 	message_admins("Выбранный Динамик: [storyteller_type]. Количество игроков - [players.len]. \
 	Уровень хаоса от игроков - [total_chaos]. [CONFIG_GET(number/chaos_for_a_medium_storyteller)] \

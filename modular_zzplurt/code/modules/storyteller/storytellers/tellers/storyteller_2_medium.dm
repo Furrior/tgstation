@@ -1,5 +1,5 @@
 /datum/storyteller/medium
-	name = "Medium Chaos"
+	name = "Dynamic Medium"
 	desc = "Medium Chaos is the default Storyteller, and the comparison point for every other Storyteller. \
 	More frequent events than Low Chaos, but less frequent events than High Chaos. Best for an average, varied experience."
 	welcome_text = "If I chopped you up in a meat grinder..."
