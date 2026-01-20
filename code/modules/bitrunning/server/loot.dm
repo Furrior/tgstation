@@ -7,7 +7,7 @@
 
 /// Handles calculating rewards based on number of players, parts, threats, etc
 /obj/machinery/quantum_server/proc/calculate_rewards()
-	var/rewards_base = 10
+	var/rewards_base = 20
 
 	if(domain_randomized)
 		rewards_base += 0.2

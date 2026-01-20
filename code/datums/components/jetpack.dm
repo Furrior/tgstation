@@ -197,10 +197,8 @@
 	var/move_dir = source.client.intended_direction
 	// Try to see if we can simulate pushing off a wall
 	var/atom/movable/backup = source.get_spacemove_backup(move_dir, FALSE, include_floors = TRUE)
-	var/had_backup = FALSE
 	if (backup && !(backup.dir & move_dir))
 		applied_force = max_drift_force
-		had_backup = TRUE
 
 	// We don't want to force the loop to fire before stabilizing if we're going to, otherwise its effects will be delayed until the next tick which is jank
 	var/force_stabilize = FALSE

@@ -94,7 +94,6 @@
 		return FALSE
 
 	var/applied_force = additional_force
-	var/old_drift_force = drift_force
 
 	var/force_x = sin(drifting_loop.angle) * drift_force + sin(inertia_angle) * applied_force / parent.inertia_force_weight
 	var/force_y = cos(drifting_loop.angle) * drift_force + cos(inertia_angle) * applied_force / parent.inertia_force_weight

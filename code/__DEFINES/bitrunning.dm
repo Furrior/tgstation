@@ -9,11 +9,11 @@
 /// You faced some decent odds
 #define BITRUNNER_REWARD_LOW 3
 /// One of your teammates might've died
-#define BITRUNNER_REWARD_MEDIUM 4
+#define BITRUNNER_REWARD_MEDIUM 5
 /// Heroic effort
-#define BITRUNNER_REWARD_HIGH 5
+#define BITRUNNER_REWARD_HIGH 10
 /// For the priciest domains, free loot basically
-#define BITRUNNER_REWARD_EXTREME 6
+#define BITRUNNER_REWARD_EXTREME 20
 
 /// Blue in ui. Basically the only threat is rogue ghosts roles
 #define BITRUNNER_DIFFICULTY_NONE 0

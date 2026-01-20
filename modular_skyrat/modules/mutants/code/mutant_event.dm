@@ -4,7 +4,7 @@
 	weight = 0
 
 /datum/round_event/mutant_infestation
-	announce_when = 300
+	announce_when = 120
 	announce_chance = 100
 	fakeable = TRUE
 	var/infected = 1

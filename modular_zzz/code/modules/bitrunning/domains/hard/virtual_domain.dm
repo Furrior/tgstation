@@ -1,3 +1,3 @@
 /// Modular Map Loader doesnt like subfolders
 /datum/lazy_template/virtual_domain/ancient_milsim
-	reward_points = 50
+	reward_points = 50 // Больше 50 - слишком много, не засчитывает.

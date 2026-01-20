@@ -9,7 +9,7 @@
 	tags = list(TAG_COMBAT, TAG_SPOOKY, TAG_CREW_ANTAG, TAG_MEDIUM)
 
 	maximum_antags_global = 5
-	min_players = 30
+	min_players = 20
 
 /datum/round_event_control/antagonist/solo/blood_cult/midround
 	name = "Blood Cult Accident"

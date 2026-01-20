@@ -89,7 +89,7 @@
 	greet_text += "Ты испытываешь непреодолимую ненависть, отвращение и презрение ко всем окружающим.<br>"
 	greet_text += "У тебя лишь две цели: <u>убивать</u> и <u>умереть славной смертью</u>.<br>"
 	greet_text += "Твое проклятое снаряжение неразлучно с тобою и подстегивает тебя продолжать соврешать геноцид беззащитных гражданских.<br>"
-	greet_text += "Твоё [span_red("Оружие Ненависти")] и неутолимая жажда убивать вознаграждают тебя, ибо завершающий выстрел в упор в голову (рот) исцеляет твои раны, нож добивает быстрее. [span_red("Обычная медицина бессильна")].<br>"
+	greet_text += "Твоё [span_red("Оружие Ненависти")] и неутолимая жажда убивать вознаграждают тебя, ибо завершающий выстрел в упор в голову (рот) исцеляет твои раны, нож добивает быстрее и надежнее. [span_red("Обычная медицина бессильна")].<br>"
 	if(chosen_gun == "Pistols")
 		greet_text += "[span_red("Кобура Ненависти")] всегда готова предоставить тебе особое парное оружие (стрелять с двух рук - в харме). После использования можешь просто выбросить их, ибо их цель была выполнена.<br>"
 	else
@@ -112,9 +112,14 @@
 	forge_objectives()
 	H.Immobilize(INFINITY, TRUE) // we don't want the player to walk around in temorary debug room during equipment selection.
 	// H.Paralyze(INFINITY, TRUE)
-	H.equipOutfit(/datum/outfit/hatred)
 	// H.SetParalyzed(0, TRUE)
+	H.equipOutfit(/datum/outfit/hatred)
 	. = ..()
+	H.add_movespeed_mod_immunities("hatred", /datum/movespeed_modifier/damage_slowdown) // I want him to be a bit slower, but indomitable by mere pain.
+	H.add_movespeed_modifier(/datum/movespeed_modifier/hatred)
+	// H.add_movespeed_mod_immunities("hatred", /datum/movespeed_modifier/sanity) // this doesn't work due to subtypes
+	// Unpredictable mood changes makes it diffcult to balance antag's speed.
+	H.mob_mood?.mood_modifier -= 1 //Basically nothing can change your mood
 	// SPECIAL TRAITS
 	ADD_TRAIT(H, TRAIT_SLEEPIMMUNE, "hatred") // I challenge you to a glorious fight!
 	ADD_TRAIT(H, TRAIT_VIRUS_RESISTANCE, "hatred")
@@ -126,20 +131,19 @@
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, "hatred") // if a player loses his arm, he won't be able to shoot nor drop his gun. it would be unplayable.
 	ADD_TRAIT(H, TRAIT_UNCONVERTABLE, "hatred")
 	// ADD_TRAIT(H, TRAIT_NOSOFTCRIT, "hatred")
-	H.add_movespeed_mod_immunities("hatred", /datum/movespeed_modifier/damage_slowdown) // I want him to be a bit slower, but indomitable by mere pain.
-	H.add_movespeed_modifier(/datum/movespeed_modifier/hatred)
 	//  GENERAL QUIRKS
 	H.add_quirk(/datum/quirk/night_vision, announce = FALSE) // ADD_TRAIT(H, TRAIT_NIGHT_VISION, "hatred")
-	ADD_TRAIT(H, TRAIT_EVIL, "hatred") // H.add_quirk(/datum/quirk/evil, announce = FALSE) // no unwanted post_add() text
 	H.add_quirk(/datum/quirk/throwingarm, announce = FALSE) // ADD_TRAIT(H, TRAIT_THROWINGARM, "hatred")
-	// H.add_quirk(/datum/quirk/jumper, announce = FALSE) // ADD_TRAIT(H, TRAIT_JUMPER, "hatred")
 	H.add_quirk(/datum/quirk/tough, announce = FALSE) // ADD_TRAIT(H, TRAIT_TOUGH, "hatred")
 	H.add_quirk(/datum/quirk/freerunning, announce = FALSE) // ADD_TRAIT(H, TRAIT_FREERUNNING, "hatred")
 	H.add_quirk(/datum/quirk/monochromatic, announce = FALSE)
-	tgui_alert(H, "У тебя есть последняя минута, чтобы собраться с мыслями. Закрой это окошко когда будешь готов...", "Ты готов убивать?", list("Я готов убивать."), timeout = 1 MINUTES, autofocus = FALSE)
+	// H.add_quirk(/datum/quirk/jumper, announce = FALSE) // ADD_TRAIT(H, TRAIT_JUMPER, "hatred")
+	ADD_TRAIT(H, TRAIT_EVIL, "hatred") // H.add_quirk(/datum/quirk/evil, announce = FALSE) // no unwanted post_add() text
+	tgui_alert(H, "У тебя есть последняя минута, чтобы собраться с мыслями. Ознакомься с инструкциями в чате. Закрой это окошко когда будешь готов...", "Ты готов убивать?", list("Я готов убивать."), timeout = 1 MINUTES, autofocus = FALSE)
 	// WE ARE READY.
 	H.SetImmobilized(0, TRUE)
 	H.fully_heal() // in case of some accidents in spawn room during preparation
+	H.mob_mood?.set_sanity(initial(H.mob_mood?.sanity), override = TRUE)
 	appear_on_station()
 	allowed_z_levels += SSmapping.levels_by_trait(ZTRAIT_CENTCOM)
 	allowed_z_levels += SSmapping.levels_by_trait(ZTRAIT_RESERVED)
@@ -151,10 +155,10 @@
 	playsound(H, pick('modular_zzz/code/modules/antagonists/hatred/hatred_begin_1.ogg', \
 						'modular_zzz/code/modules/antagonists/hatred/hatred_begin_2.ogg', \
 						'modular_zzz/code/modules/antagonists/hatred/hatred_begin_3.ogg'), vol = 50, vary = FALSE, ignore_walls = FALSE)
-	addtimer(CALLBACK(src, PROC_REF(alarm_station)), 10 SECONDS, TIMER_DELETE_ME) // Think FAST.
+	addtimer(CALLBACK(src, PROC_REF(alarm_station)), 5 SECONDS, TIMER_DELETE_ME) // Think FAST.
 
 /datum/movespeed_modifier/hatred
-	multiplicative_slowdown = 0.5
+	multiplicative_slowdown = 0.6
 
 /datum/antagonist/hatred/proc/evaluate_security()
 	var/gear_points = length(SSjob.get_living_sec())
@@ -171,7 +175,7 @@
 	switch(gear_points)
 		// if(-INFINITY to 4)
 		// 	gear_level = 0
-		if(-INFINITY to 5) 	// 4(GC)-5
+		if(-INFINITY to 5) 	// 5
 			gear_level = 1
 		if(7 to INFINITY) 	// 7+
 			gear_level = 2
@@ -919,10 +923,10 @@
 	if(!.)
 		return
 	. = FALSE
-	if(SSsecurity_level.get_current_level_as_number() in list(SEC_LEVEL_GREEN)) // разбавляем эксту внутривенно
-		if(length(SSjob.get_living_sec()) < 4)
-			return
-	else if(length(SSjob.get_living_sec()) < 5) // я желаю достойного сопротивления.
+	// if(SSsecurity_level.get_current_level_as_number() in list(SEC_LEVEL_GREEN)) // разбавляем эксту внутривенно
+	// 	if(length(SSjob.get_living_sec()) < 4)
+	// 		return
+	if(length(SSjob.get_living_sec()) < 5) // я желаю достойного сопротивления.
 		return
 	return TRUE
 
@@ -975,10 +979,10 @@
 	// 	return FALSE
 	// if(EMERGENCY_PAST_POINT_OF_NO_RETURN)
 	// 	return FALSE
-	if(SSsecurity_level.get_current_level_as_number() in list(SEC_LEVEL_GREEN)) // разбавляем эксту внутривенно
-		if(length(SSjob.get_living_sec()) < 4)
-			return FALSE
-	else if(length(SSjob.get_living_sec()) < 5) // я желаю достойного сопротивления.
+	// if(SSsecurity_level.get_current_level_as_number() in list(SEC_LEVEL_GREEN)) // разбавляем эксту внутривенно
+	// 	if(length(SSjob.get_living_sec()) < 4)
+	// 		return FALSE
+	if(length(SSjob.get_living_sec()) < 5) // я желаю достойного сопротивления.
 		return FALSE
 	return ..()
 

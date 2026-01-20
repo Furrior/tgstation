@@ -10,6 +10,7 @@
 	var/target_slot = ITEM_SLOT_OCLOTHING
 	var/change_allowed = TRUE
 	var/list/target_allowed // = GLOB.security_vest_allowed
+	var/target_body_parts_covered = CHEST
 
 	var/armor_text = "standard Nanotrasen security armored vest"
 	var/target_prefix = "rampart"
@@ -26,12 +27,15 @@
 		return FALSE
 
 	var/obj/item/target = interacting_with
+	var/obj/item/clothing/C = target
+
+	if(!C)
+		return NONE
 
 	if(!(target.slot_flags & target_slot))
 		to_chat(user, "<span class = 'notice'>Вы не можете улучшить [target] при помощи [src].</span>")
 		return FALSE
 
-	var/obj/item/clothing/C = target
 	var/datum/armor/curr_armor = C.get_armor()
 
 	for(var/stat in ARMOR_LIST_DAMAGE())
@@ -47,8 +51,9 @@
 	if(used)
 		if(change_allowed)
 			C.allowed = target_allowed
+		C.body_parts_covered = target_body_parts_covered
 		user.visible_message("<span class = 'notice'>[user] улучшает [C] при помощи [src].</span>", \
-		"<span class = 'notice'>Ты улучшаешь [C] до уровня [armor_text] при помощи [src]..</span>")
+		"<span class = 'notice'>Ты улучшаешь [C] до уровня [armor_text] при помощи [src].</span>")
 		C.name = "[target_prefix] [C.name]"
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
@@ -64,6 +69,7 @@
 	target_armor = /datum/armor/head_helmet
 	target_slot = ITEM_SLOT_HEAD
 	change_allowed = FALSE
+	target_body_parts_covered = HEAD
 	// target_allowed = GLOB.security_vest_allowed
 
 	armor_text = "standard Nanotrasen security helmet"

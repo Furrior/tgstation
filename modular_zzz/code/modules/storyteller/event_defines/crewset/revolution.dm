@@ -6,6 +6,7 @@
 	antag_datum = /datum/antagonist/rev/head
 
 	weight = 5
+	min_players = 20
 	tags = list(TAG_CREW_ANTAG, TAG_CHAOTIC, TAG_MEDIUM)
 
 	base_antags = 1

@@ -10,6 +10,7 @@
 	antag_datum = /datum/antagonist/assault_operative
 
 	weight = 3
+	min_players = 20
 	tags = list(TAG_CREW_ANTAG, TAG_CHAOTIC, TAG_MEDIUM)
 
 	base_antags = 2

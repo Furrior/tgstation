@@ -7,14 +7,14 @@
 	min_players = 50
 
 /datum/round_event/zombie_infestation
-	announce_when = 300
+	announce_when = 120
 	announce_chance = 100
 	fakeable = TRUE
 	var/infected = 1
 
 /datum/round_event/zombie_infestation/setup()
 	. = ..()
-	infected = rand(6, 9)
+	infected = rand(3, 6)
 
 /datum/round_event/zombie_infestation/start()
 	. = ..()
