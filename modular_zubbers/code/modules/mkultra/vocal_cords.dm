@@ -291,17 +291,17 @@
 			//mood
 			if(humanoid.mob_mood)
 				switch(humanoid.mob_mood.sanity_level)
-					if(SANITY_GREAT to INFINITY)
+					if(SANITY_LEVEL_GREAT)
 						speaktrigger += "Я вне себя от восторга!! " //did you mean byond elated? hohoho
-					if(SANITY_NEUTRAL to SANITY_GREAT)
+					if(SANITY_LEVEL_NEUTRAL)
 						speaktrigger += "Я счастлив! "
-					if(SANITY_DISTURBED to SANITY_NEUTRAL)
+					if(SANITY_LEVEL_DISTURBED)
 						speaktrigger += "Мне немного грустно, "
-					if(SANITY_UNSTABLE to SANITY_DISTURBED)
+					if(SANITY_LEVEL_UNSTABLE)
 						speaktrigger += "Мне грустно, "
-					if(SANITY_CRAZY to SANITY_UNSTABLE)
+					if(SANITY_LEVEL_CRAZY)
 						speaktrigger += "Мне очень плохо без вас! "
-					if(SANITY_INSANE to SANITY_CRAZY)
+					if(SANITY_LEVEL_INSANE)
 						speaktrigger += "Подержи меня, пожалуйста.. "
 
 			//withdrawl_active
