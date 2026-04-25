@@ -111,11 +111,11 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 	print_command_report(., "[command_name()] Status Summary", announce=FALSE)
 	if(greenshift)
 		priority_announce(
-			"Благодаря неустанным усилиям наших служб безопасности и разведки Nanotrasen, \
-				в настоящее время нет никаких реальных угроз для [station_name()]. \
-				Все Цели Смены были одобрены. Обеспечьте себе безопасную смену!",
-			"Диспетчерская Служба",
-			SSstation.announcer.get_rand_report_sound(),
+			"Thanks to the tireless efforts of our security and intelligence divisions, \
+				there are currently no credible threats to [station_name()]. \
+				All station construction projects have been authorized. Have a secure shift!",
+			"Security Report",
+			ANNOUNCER_COMMAND_REPORT, // SPLURT EDIT
 			color_override = "green",
 		)
 	else if(CONFIG_GET(flag/roundstart_blue_alert))
@@ -130,9 +130,9 @@ GLOBAL_DATUM_INIT(communications_controller, /datum/communciations_controller, n
 		)
 	else
 		priority_announce(
-			"Сводка ситуации на станции была скопирована и распечатана на всех пультах связи.",
-			"Диспетчерская Служба",
-			SSstation.announcer.get_rand_report_sound(),
+			"A summary of the station's situation has been copied and printed to all communications consoles.",
+			"Security Report",
+			ANNOUNCER_COMMAND_REPORT, // SPLURT EDIT
 		)
 
 #endif
