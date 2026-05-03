@@ -356,9 +356,9 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			SSeconomy.full_ancap = !SSeconomy.full_ancap
 			message_admins("[key_name_admin(holder)] toggled Anarcho-capitalist mode")
 			if(SSeconomy.full_ancap)
-				priority_announce("The NAP is now in full effect.", null, ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
+				priority_announce("НПД вступило в полную силу.", null, ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
 			else
-				priority_announce("The NAP has been revoked.", null, ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
+				priority_announce("НПД было отозвано.", null, ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
 		if("send_shuttle_back")
 			if (!is_funmin)
 				return

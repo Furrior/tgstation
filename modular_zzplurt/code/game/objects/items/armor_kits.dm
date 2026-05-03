@@ -46,9 +46,10 @@
 
 	var/datum/armor/curr_armor = C.get_armor()
 
-	if(istype(curr_armor, /datum/armor/mod_theme))
-		to_chat(user, "<span class = 'notice'>You can't reinforce MODsuit parts with [src].</span>")
-		return NONE
+	for(var/stat in ARMOR_LIST_DAMAGE())
+		if(curr_armor.get_rating(stat) > 0)
+			to_chat(user, "<span class='notice'>[C] уже имеет броню.</span>")
+			return FALSE
 
 	for(var/curr_stat in ARMOR_LIST_DAMAGE())
 		if(curr_armor.get_rating(curr_stat) < actual_armor.get_rating(curr_stat))
@@ -58,15 +59,8 @@
 		if(change_allowed)
 			C.allowed = target_allowed
 		C.body_parts_covered = target_body_parts_covered
-		C.set_armor(actual_armor)
-		C.cold_protection = target_armor::cold_protection
-		C.min_cold_protection_temperature = target_armor::min_cold_protection_temperature
-		C.heat_protection = target_armor::heat_protection
-		C.max_heat_protection_temperature = target_armor::max_heat_protection_temperature
-		C.max_integrity = target_armor::max_integrity
-		C.resistance_flags = target_armor::resistance_flags
-		user.visible_message("<span class = 'notice'>[user] reinforces [C] with [src].</span>", \
-		"<span class = 'notice'>You reinforce [C] with [src], making it as protective as \a [armor_text].</span>")
+		user.visible_message("<span class = 'notice'>[user] улучшает [C] при помощи [src].</span>", \
+		"<span class = 'notice'>Ты улучшаешь [C] до уровня [armor_text] при помощи [src].</span>")
 		C.name = "[target_prefix] [C.name]"
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS

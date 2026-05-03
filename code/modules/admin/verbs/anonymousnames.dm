@@ -184,7 +184,7 @@ GLOBAL_DATUM(current_anonymous_theme, /datum/anonymous_theme)
 	player.put_in_hands(new random_path())
 
 /datum/anonymous_theme/wizards/announce_to_all_players()
-	priority_announce("Your station has been caught by a Wizard Federation Memetic Hazard. You are not y0urself, and yo% a2E 34!NOT4--- Welcome to the Academy, apprentices!", "Memetic Hazard", ANNOUNCER_RANDOM_ALERT) // SPLURT EDIT
+	priority_announce("Ваша станция подверглась меметической опасности Федерации Волшебников. Вы не в себе, и вы% a2E 34!NOT4?--- <...> Добро пожаловать в Академию, ученики!", "Меметическая Угроза", ANNOUNCER_RANDOM_ALERT) // SPLURT EDIT
 
 /datum/anonymous_theme/wizards/anonymous_name(mob/target)
 	var/wizard_name_first = pick(GLOB.wizard_first)

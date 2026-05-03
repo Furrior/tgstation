@@ -107,8 +107,8 @@
 
 	if(announce)
 		priority_announce(
-			text = "A report has been downloaded and printed out at all communications consoles.",
-			title = "Incoming Classified Message",
+			text = "Отчет был загружен и распечатан на всех коммуникационных консолях.",
+			title = "Входящее Секретное Сообщение",
 			sound = ANNOUNCER_COMMAND_REPORT, // SPLURT EDIT
 			has_important_message = TRUE,
 		)

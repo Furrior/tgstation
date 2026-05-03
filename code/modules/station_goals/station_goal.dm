@@ -7,8 +7,8 @@
 	var/report_message = "Complete this goal."
 
 /datum/station_goal/proc/send_report()
-	priority_announce("Priority Nanotrasen directive received. Project \"[name]\" details inbound.", "Incoming Priority Message", ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
-	print_command_report(get_report(),"Nanotrasen Directive [pick(GLOB.phonetic_alphabet)] \Roman[rand(1,50)]", announce=FALSE)
+	priority_announce("Получена приоритетная директива Nanotrasen. Детали о Цели Смене \"[name]\" последуют в распечатанном виде.", "[command_name()]: Сверх-Важное Объявление", ANNOUNCER_COMMAND_REPORT) // SPLURT EDIT
+	print_command_report(get_report(),"Цель Смены [pick(GLOB.phonetic_alphabet)] \Roman[rand(1,50)]", announce=FALSE)
 	on_report()
 
 /datum/station_goal/proc/on_report()
